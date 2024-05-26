@@ -11,6 +11,8 @@ int main()
 	List.PushBack(3);
 	List.PushBack(3);
 	List.PushBack(3);
+	int a =  List.Size();
+
 }
 
 /*

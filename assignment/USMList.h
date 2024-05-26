@@ -51,7 +51,9 @@ class USMList
 public:
 	// constrcuter destructer
 	USMList() {}
-	~USMList();
+	~USMList() {
+
+	}
 
 	// delete Function
 	USMList(const USMList& _Other) = delete;
@@ -79,6 +81,7 @@ inline void USMList<Type>::PushBack(Type _Type)
 	if (nullptr == Head) {
 		Head = Node;
 	}
+
 
 	if (nullptr == Tail) {
 		Tail = Node;

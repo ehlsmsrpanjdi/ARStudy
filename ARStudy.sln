@@ -12,6 +12,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineTool", "EngineTool\EngineTool.vcxproj", "{36996203-125E-41B8-9A1F-CCDEF73D3716}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task", "assignment\assignment.vcxproj", "{166ED51F-CDAF-44BB-B7E0-C5A57BD37E58}"
+	ProjectSection(ProjectDependencies) = postProject
+		{36996203-125E-41B8-9A1F-CCDEF73D3716} = {36996203-125E-41B8-9A1F-CCDEF73D3716}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Level0", "Level0", "{A7B737B4-9F87-4223-947C-F5BF0F861927}"
 EndProject
