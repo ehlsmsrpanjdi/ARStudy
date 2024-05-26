@@ -22,6 +22,9 @@
     <Filter Include="List\JYoon">
       <UniqueIdentifier>{e8d8cd7f-6c11-4190-963d-b6f3cc18b20c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PreCompile">
+      <UniqueIdentifier>{6ac535dd-8ebf-47ee-a925-8bf3a02e1f0a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -33,6 +36,9 @@
     <ClInclude Include="KSWNode.h">
       <Filter>List\SuWon</Filter>
     </ClInclude>
+    <ClInclude Include="PreCompile.h">
+      <Filter>PreCompile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -43,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="KSWNode.cpp">
       <Filter>List\SuWon</Filter>
+    </ClCompile>
+    <ClCompile Include="PreCompile.cpp">
+      <Filter>PreCompile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
