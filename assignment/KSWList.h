@@ -28,27 +28,29 @@ namespace ksw
 
 			~iterator() {};
 
-			void operator++()
+			// 이거 수정 필요 할 듯
+			inline void operator++()
 			{
 				CurNode = CurNode->Next;
 			}
 
-			void operator--()
+			// 이거 수정 필요 할 듯
+			inline void operator--()
 			{
 				CurNode = CurNode->Prev;
 			}
 
-			Type& operator*()
+			inline Type& operator*()
 			{
 				return CurNode->Data;
 			}
 
-			bool operator!=(const iterator& _Other)
+			inline bool operator!=(const iterator& _Other)
 			{
 				return CurNode != _Other.CurNode;
 			}
 
-			bool operator==(const iterator& _Other)
+			inline bool operator==(const iterator& _Other)
 			{
 				return CurNode == _Other.CurNode;
 			}
@@ -71,35 +73,35 @@ namespace ksw
 		list& operator=(list&& _Other) noexcept = delete;
 
 	public:
-		Type front();
-		Type back();
+		inline Type front();
+		inline Type back();
 
-		void push_front(const Type& _Data);
-		void push_back(const Type& _Data);
+		inline void push_front(const Type& _Data);
+		inline void push_back(const Type& _Data);
 
-		void pop_front();
-		void pop_back();
+		inline void pop_front();
+		inline void pop_back();
 
-		void clear();
+		inline void clear();
 
 		inline size_t size()
 		{
 			return Size;
 		}
 
-		bool empty()
+		inline bool empty()
 		{
 			return Size == 0;
 		}
 
 	// iterator
 	public:
-		iterator begin()
+		inline iterator begin()
 		{
 			return iterator(Start);
 		}
 
-		iterator end()
+		inline iterator end()
 		{
 			if (0 == Size)
 			{
@@ -109,12 +111,12 @@ namespace ksw
 			return iterator(End->Next);
 		}
 
-		iterator insert(const iterator& _Iter, const Type& _Data)
+		inline iterator insert(const iterator& _Iter, const Type& _Data)
 		{
 			return iterator();
 		}
 
-		iterator erase(iterator& _Iter)
+		inline iterator erase(iterator& _Iter)
 		{
 			Node* NextNode = _Iter.CurNode->Next;
 			Node* PrevNode = _Iter.CurNode->Prev;
