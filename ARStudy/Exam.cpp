@@ -1,16 +1,16 @@
 #include "PreCompile.h"
-#include <assignment/USMList.h>
+
 int main() 
 {
 	LeakCheck;
 
-	USMList<int> List;
-	List.PushBack(3);
-	List.PushBack(3);
-	List.PushBack(3);
-	List.PushBack(3);
-	List.PushBack(3);
-	List.PushBack(3);
+	//USMList<int> List;
+	//List.PushBack(3);
+	//List.PushBack(3);
+	//List.PushBack(3);
+	//List.PushBack(3);
+	//List.PushBack(3);
+	//List.PushBack(3);
 }
 
 /*
