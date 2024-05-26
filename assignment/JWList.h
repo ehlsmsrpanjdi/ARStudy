@@ -172,6 +172,18 @@ public:
 		return Result;
 	}
 
+	void insert(iterator& _Iter, DataType _Value)
+	{
+		Node* InsertNode = new Node();
+		InsertNode->Data = _Value;
+
+		InsertNode->Prev = _Iter.CurNode;
+		InsertNode->Next = _Iter.CurNode->Next;
+
+		_Iter.CurNode->Next->Prev = InsertNode;
+		_Iter.CurNode->Next = InsertNode;
+	}
+
 protected:
 
 private:
