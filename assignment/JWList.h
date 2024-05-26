@@ -9,45 +9,8 @@ private:
 	{
 		Node* Prev = nullptr;
 		Node* Next = nullptr;
-		DataType Data;
+		DataType Data = DataType();
 	};
-
-public:
-	class iterator
-	{
-		friend JWList;
-	public:
-		iterator()
-		{
-		}
-		iterator(Node* _Node)
-		{
-			CurNode = _Node;
-		}
-
-		bool operator!=(const iterator& _iter)
-		{
-			bool Result = CurNode != _iter.CurNode;
-			return Result;
-		}
-
-		void operator++()
-		{
-			CurNode = CurNode->Next;
-		}
-
-		DataType operator*()
-		{
-			return CurNode->Data;
-		}
-
-
-	protected:
-
-	private:
-		Node* CurNode = nullptr;
-	};
-
 public:
 	JWList()
 	{
@@ -71,8 +34,45 @@ public:
 
 	JWList(const JWList& _Other) = delete;
 	JWList(JWList&& _Other) noexcept = delete;
-	JWList& operator=(const JWList& _Other) = delete;
+	//JWList& operator=(const JWList& _Other) = delete;
 	JWList& operator=(JWList&& _Other) noexcept = delete;
+
+	class iterator
+	{
+		friend JWList;
+	public:
+		iterator()
+		{
+
+		}
+		iterator(Node* _Node)
+		{
+			CurNode = _Node;
+		}
+
+		bool operator!=(const iterator& _iter)
+		{
+			bool Result = CurNode != _iter.CurNode;
+			return Result;
+		}
+
+		iterator& operator++()
+		{
+			CurNode = CurNode->Next;
+			return *this;
+		}
+
+		DataType& operator*()
+		{
+			return CurNode->Data;
+		}
+
+
+	protected:
+
+	private:
+		Node* CurNode = nullptr;
+	};
 
 	void push_back(const DataType& _Data)
 	{
@@ -153,18 +153,18 @@ public:
 
 	iterator erase(iterator& _Iter)
 	{
+		if (_Iter.CurNode == First || _Iter.CurNode == End)
+		{
+			MsgBoxAssert("list에 값이 들어있지 않은 상태입니다.");
+		}
+
 		iterator Result;
 		if (nullptr != _Iter.CurNode)
 		{
 			Result = iterator(_Iter.CurNode->Next);
 
 			_Iter.CurNode->Prev->Next = _Iter.CurNode->Next;
-			Node* Test1 = _Iter.CurNode->Prev->Next;
-			Node* Test2 = _Iter.CurNode->Next;
-
 			_Iter.CurNode->Next->Prev = _Iter.CurNode->Prev;
-			Node* Test3 = _Iter.CurNode->Next->Prev;
-			Node* Test4 = _Iter.CurNode->Prev;
 
 			delete _Iter.CurNode;
 			_Iter.CurNode = nullptr;
@@ -177,11 +177,34 @@ public:
 		Node* InsertNode = new Node();
 		InsertNode->Data = _Value;
 
-		InsertNode->Prev = _Iter.CurNode;
-		InsertNode->Next = _Iter.CurNode->Next;
+		InsertNode->Prev = _Iter.CurNode->Prev;
+		InsertNode->Next = _Iter.CurNode;
 
-		_Iter.CurNode->Next->Prev = InsertNode;
-		_Iter.CurNode->Next = InsertNode;
+		_Iter.CurNode->Prev->Next = InsertNode;
+		_Iter.CurNode->Prev = InsertNode;
+	}
+
+	void operator=(const JWList& _OtherList)
+	{
+		Node* Temp = _OtherList.First->Next;
+		while (Temp != _OtherList.End)
+		{
+			push_back(Temp->Data);
+			Temp = Temp->Next;
+		}
+	}
+
+	void remove(const DataType& _Value)
+	{
+		for (iterator Iter = this->begin(); Iter != this->end();)
+		{
+			if (Iter.CurNode->Data == _Value)
+			{
+				Iter = erase(Iter);
+				continue;
+			}
+			++Iter;
+		}
 	}
 
 protected:
