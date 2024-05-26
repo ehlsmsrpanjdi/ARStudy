@@ -10,9 +10,6 @@
     <Filter Include="List\YonDoo">
       <UniqueIdentifier>{abcd0886-b75a-49d0-9243-aa73f8877b80}</UniqueIdentifier>
     </Filter>
-    <Filter Include="List\JU">
-      <UniqueIdentifier>{001bae8b-84df-49a6-9413-309b4607e4df}</UniqueIdentifier>
-    </Filter>
     <Filter Include="List\Absent">
       <UniqueIdentifier>{c96a7082-333b-47ab-8814-7e4aac0ea457}</UniqueIdentifier>
     </Filter>
@@ -25,6 +22,9 @@
     <Filter Include="PreCompile">
       <UniqueIdentifier>{6ac535dd-8ebf-47ee-a925-8bf3a02e1f0a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="List\JW">
+      <UniqueIdentifier>{001bae8b-84df-49a6-9413-309b4607e4df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -35,6 +35,12 @@
     </ClInclude>
     <ClInclude Include="PreCompile.h">
       <Filter>PreCompile</Filter>
+    </ClInclude>
+    <ClInclude Include="JWList.h">
+      <Filter>List\JW</Filter>
+    </ClInclude>
+    <ClInclude Include="YndooList.h">
+      <Filter>List\YonDoo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
