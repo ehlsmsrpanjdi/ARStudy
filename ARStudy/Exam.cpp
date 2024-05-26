@@ -4,15 +4,6 @@ int main()
 {
 	LeakCheck;
 
-	USMList<int> List;
-	List.PushBack(3);
-	List.PushBack(3);
-	List.PushBack(3);
-	List.PushBack(3);
-	List.PushBack(3);
-	List.PushBack(3);
-	int a =  List.Size();
-
 }
 
 /*
