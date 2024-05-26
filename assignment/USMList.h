@@ -11,10 +11,6 @@ public:
 	{
 	}
 	~USMItor() {
-		if (Next != nullptr) {
-			delete Next;
-			Next = nullptr;
-		}
 	}
 
 	// delete Function
@@ -26,6 +22,7 @@ public:
 	USMItor<Type>* Prev = nullptr;
 	USMItor<Type>* Next = nullptr;
 	Type Value;
+
 	USMItor* operator++() {
 		return Next;
 	}
@@ -33,8 +30,16 @@ public:
 	USMItor operator++(int) {
 		USMItor* Temp;
 		Temp = this;
-		 this = Next;
+		this = Next;
 		return Temp;
+	}
+
+	void Release() {
+		if (Next != nullptr) {
+			Next->Release();
+			delete Next;
+			Next = nullptr;
+		}
 	}
 };
 
@@ -47,6 +52,7 @@ public:
 	// constrcuter destructer
 	USMList() {}
 	~USMList() {
+		Head->Release();
 		delete Head;
 	}
 
@@ -62,6 +68,8 @@ public:
 	USMItor<Type>* End();
 	int Size();
 	void Clear();
+	void Remove(Type _Type);
+
 	bool Empty() {
 		if (ListSize >= 1) {
 			return false;
@@ -84,8 +92,8 @@ inline void USMList<Type>::PushBack(Type _Type)
 		Head = Node;
 		Tail = Node;
 	}
-	
-	else if(Head == Tail){
+
+	else if (Head == Tail) {
 		Tail = Node;
 		Head->Next = Tail;
 		Tail->Prev = Head;
@@ -146,4 +154,29 @@ inline void USMList<Type>::Clear()
 	Head = nullptr;
 	Tail = nullptr;
 	ListSize = 0;
+}
+
+template<typename Type>
+inline void USMList<Type>::Remove(Type _Type)
+{
+	USMItor<Type>* Destroy = nullptr;
+	for (USMItor<Type>* Index = Head; Index != nullptr; ) {
+		if (Index->Value == _Type) {
+			if (Index == Head) {
+				Head = Index->Next;
+			}
+			if (Index == Tail) {
+				Tail = Index->Prev;
+			}
+			Index->Prev->Next = Index->Next;
+			Index->Next->Prev = Index->Prev;
+			--ListSize;
+			Destroy = Index;
+		}
+		Index = Index->operator++();
+		if (Destroy != nullptr) {
+			delete Destroy;
+			Destroy = nullptr;
+		}
+	}
 }
