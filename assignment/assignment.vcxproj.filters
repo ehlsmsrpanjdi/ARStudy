@@ -41,11 +41,11 @@
     <ClCompile Include="USMList.cpp">
       <Filter>List\USM</Filter>
     </ClCompile>
-    <ClCompile Include="KSWList.cpp">
-      <Filter>List\SuWon</Filter>
-    </ClCompile>
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
+    </ClCompile>
+    <ClCompile Include="KSWList.cpp">
+      <Filter>List\SuWon</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
