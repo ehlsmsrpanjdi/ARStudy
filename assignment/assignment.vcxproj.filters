@@ -27,10 +27,22 @@
     <ClInclude Include="USMList.h">
       <Filter>List\USM</Filter>
     </ClInclude>
+    <ClInclude Include="KSWList.h">
+      <Filter>List\SuWon</Filter>
+    </ClInclude>
+    <ClInclude Include="KSWNode.h">
+      <Filter>List\SuWon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
       <Filter>List\USM</Filter>
+    </ClCompile>
+    <ClCompile Include="KSWList.cpp">
+      <Filter>List\SuWon</Filter>
+    </ClCompile>
+    <ClCompile Include="KSWNode.cpp">
+      <Filter>List\SuWon</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -128,12 +128,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="KSWList.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="KSWNode.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="USMList.h">
       <SubType>
       </SubType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="KSWList.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="KSWNode.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="USMList.cpp">
       <SubType>
       </SubType>
