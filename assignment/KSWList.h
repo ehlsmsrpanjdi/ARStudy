@@ -60,6 +60,8 @@ namespace ksw
 	public:
 		// constructor destructor
 		list() {};
+		list(size_t _Size);
+		list(Type _Data, size_t _Size);
 		~list();
 
 		// delete Function
@@ -75,9 +77,24 @@ namespace ksw
 		void push_front(const Type& _Data);
 		void push_back(const Type& _Data);
 
+		void pop_front();
+		void pop_back();
+
+		inline size_t size()
+		{
+			return Size;
+		}
+
+		bool empty()
+		{
+			return Size == 0;
+		}
+
+	// iterator
+	public:
 		iterator begin()
 		{
-			return iterator(Begin);
+			return iterator(Start);
 		}
 
 		iterator end()
@@ -85,13 +102,14 @@ namespace ksw
 			return iterator(End->Next);
 		}
 
-		inline size_t size()
+		iterator insert(const iterator& _Iter, const Type& _Data)
 		{
-			return Size;
+			return iterator();
 		}
 
+
 	private:
-		Node* Begin = nullptr;
+		Node* Start = nullptr;
 		Node* End = nullptr;
 		size_t Size = 0;
 
@@ -99,9 +117,27 @@ namespace ksw
 
 	// ±¸ÇöºÎ
 	template<typename Type>
+	inline list<Type>::list(size_t _Size)
+	{
+		for (size_t i = 0; i < _Size; i++)
+		{
+			push_back(Type());
+		}
+	}
+
+	template<typename Type>
+	inline list<Type>::list(Type _Data, size_t _Size)
+	{
+		for (size_t i = 0; i < _Size; i++)
+		{
+			push_back(_Data);
+		}
+	}
+
+	template<typename Type>
 	inline ksw::list<Type>::~list()
 	{
-		Node* CurNode = Begin;
+		Node* CurNode = Start;
 		while (nullptr != CurNode)
 		{
 			Node* Next = CurNode->Next;
@@ -113,7 +149,7 @@ namespace ksw
 	template<typename Type>
 	inline Type list<Type>::front()
 	{
-		return Begin->Data;
+		return Start->Data;
 	}
 
 	template<typename Type>
@@ -128,13 +164,13 @@ namespace ksw
 		Node* NewNode = new Node;
 		NewNode->Data = _Data;
 
-		if (nullptr != Begin)
+		if (nullptr != Start)
 		{
-			NewNode->Next = Begin;
-			Begin->Prev = NewNode;
+			NewNode->Next = Start;
+			Start->Prev = NewNode;
 		}
 
-		Begin = NewNode;
+		Start = NewNode;
 		++Size;
 	}
 
@@ -144,9 +180,9 @@ namespace ksw
 		Node* NewNode = new Node;
 		NewNode->Data = _Data;
 
-		if (nullptr == Begin)
+		if (nullptr == Start)
 		{
-			Begin = NewNode;
+			Start = NewNode;
 		}
 		else
 		{
@@ -158,6 +194,23 @@ namespace ksw
 		++Size;
 	}
 
+	template<typename Type>
+	inline void list<Type>::pop_front()
+	{
+		Node* CurNode = Start;
+		Start = CurNode->Next;
+		Start->Prev = nullptr;
+		delete CurNode;
+	}
+
+	template<typename Type>
+	inline void list<Type>::pop_back()
+	{
+		Node* CurNode = End;
+		End = CurNode->Prev;
+		End->Next = nullptr;
+		delete CurNode;
+	}
 }
 
 
