@@ -168,10 +168,6 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="KSWNode.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
     <ClInclude Include="PreCompile.h">
       <SubType>
       </SubType>
@@ -187,10 +183,6 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="KSWList.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="KSWNode.cpp">
       <SubType>
       </SubType>
     </ClCompile>
