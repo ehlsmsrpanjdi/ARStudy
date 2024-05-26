@@ -107,6 +107,50 @@ namespace ksw
 			return iterator();
 		}
 
+		iterator erase(iterator& _Iter)
+		{
+			Node* NextNode = _Iter.CurNode->Next;
+			Node* PrevNode = _Iter.CurNode->Prev;
+			
+			if (Start == _Iter.CurNode)
+			{
+				if (nullptr != NextNode)
+				{
+					NextNode->Prev = nullptr;
+				}
+				else
+				{
+					End = nullptr;
+				}
+			
+				Start = NextNode;
+			}
+			else if (End == _Iter.CurNode)
+			{
+				if (nullptr != PrevNode)
+				{
+					PrevNode->Next = nullptr;
+				}
+				else
+				{
+					Start = nullptr;
+				}
+
+				End = PrevNode;
+			}
+			else
+			{
+				NextNode->Prev = PrevNode;
+				PrevNode->Next = NextNode;
+			}
+			
+			delete _Iter.CurNode;
+			--Size;
+
+			_Iter.CurNode = NextNode;
+			return _Iter;
+		}
+
 
 	private:
 		Node* Start = nullptr;
@@ -201,6 +245,7 @@ namespace ksw
 		Start = CurNode->Next;
 		Start->Prev = nullptr;
 		delete CurNode;
+		--Size;
 	}
 
 	template<typename Type>
@@ -210,6 +255,7 @@ namespace ksw
 		End = CurNode->Prev;
 		End->Next = nullptr;
 		delete CurNode;
+		--Size;
 	}
 }
 
