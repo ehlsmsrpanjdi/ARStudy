@@ -2,7 +2,7 @@
 
 namespace ksw
 {
-	// 설명 : list
+	// 설명 : list 클래스
 	class list
 	{
 	public:
