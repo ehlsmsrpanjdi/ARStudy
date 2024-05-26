@@ -187,6 +187,14 @@
       </SubType>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\assignment\assignment.vcxproj">
+      <Project>{166ed51f-cdaf-44bb-b7e0-c5a57bd37e58}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\EngineTool\EngineTool.vcxproj">
+      <Project>{36996203-125e-41b8-9a1f-ccdef73d3716}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
