@@ -1,5 +1,7 @@
 #include "KSWNode.h"
 
+#include "KSWList.h"
+
 namespace ksw
 {
 	Node::Node()

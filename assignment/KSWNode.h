@@ -17,9 +17,6 @@ namespace ksw
 		Node& operator=(Node&& _Other) noexcept = delete;
 
 
-
-	protected:
-
 	private:
 		Node* Prev = nullptr;
 		Node* Next = nullptr;

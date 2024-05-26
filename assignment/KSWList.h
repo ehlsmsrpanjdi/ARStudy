@@ -16,7 +16,8 @@ namespace ksw
 		list& operator=(const list& _Other) = delete;
 		list& operator=(list&& _Other) noexcept = delete;
 
-	protected:
+	public:
+		void push_back(int _Value);
 
 	private:
 

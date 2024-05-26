@@ -10,7 +10,12 @@ namespace ksw
 	{
 	}
 
+	void list::push_back(int _Value)
+	{
 
+	}
+
+	
 
 
 
