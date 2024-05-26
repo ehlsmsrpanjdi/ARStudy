@@ -1,6 +1,9 @@
-#include <iostream>
+#include "PreCompile.h"
 
-int main() {
+int main() 
+{
+	_CrtSetDbgFlag(_CRTDBG_LEAK_CHECK_DF | _CRTDBG_ALLOC_MEM_DF); // Leak Check
+
 	std::cout << "asdf" << std::endl;
 }
 

@@ -10,9 +10,6 @@
     <Filter Include="List\YonDoo">
       <UniqueIdentifier>{abcd0886-b75a-49d0-9243-aa73f8877b80}</UniqueIdentifier>
     </Filter>
-    <Filter Include="List\JU">
-      <UniqueIdentifier>{001bae8b-84df-49a6-9413-309b4607e4df}</UniqueIdentifier>
-    </Filter>
     <Filter Include="List\Absent">
       <UniqueIdentifier>{c96a7082-333b-47ab-8814-7e4aac0ea457}</UniqueIdentifier>
     </Filter>
@@ -22,10 +19,25 @@
     <Filter Include="List\JYoon">
       <UniqueIdentifier>{e8d8cd7f-6c11-4190-963d-b6f3cc18b20c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PreCompile">
+      <UniqueIdentifier>{6ac535dd-8ebf-47ee-a925-8bf3a02e1f0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="List\JW">
+      <UniqueIdentifier>{001bae8b-84df-49a6-9413-309b4607e4df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
       <Filter>List\USM</Filter>
+    </ClInclude>
+    <ClInclude Include="KSWList.h">
+      <Filter>List\SuWon</Filter>
+    </ClInclude>
+    <ClInclude Include="PreCompile.h">
+      <Filter>PreCompile</Filter>
+    </ClInclude>
+    <ClInclude Include="JWList.h">
+      <Filter>List\JW</Filter>
     </ClInclude>
     <ClInclude Include="YndooList.h">
       <Filter>List\YonDoo</Filter>
@@ -34,6 +46,15 @@
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
       <Filter>List\USM</Filter>
+    </ClCompile>
+    <ClCompile Include="KSWList.cpp">
+      <Filter>List\SuWon</Filter>
+    </ClCompile>
+    <ClCompile Include="PreCompile.cpp">
+      <Filter>PreCompile</Filter>
+    </ClCompile>
+    <ClCompile Include="JWList.cpp">
+      <Filter>List\JW</Filter>
     </ClCompile>
     <ClCompile Include="YndooList.cpp">
       <Filter>List\YonDoo</Filter>
