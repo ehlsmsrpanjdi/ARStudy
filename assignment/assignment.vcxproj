@@ -190,7 +190,6 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="KSWList.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <SubType>
       </SubType>
