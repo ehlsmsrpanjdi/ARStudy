@@ -1,5 +1,4 @@
 #pragma once
 
-#include <iostream>
+#include <EngineTool/PreCompile.h>
 #include <EngineTool/EngineDebug.h>
-#include <list>
