@@ -80,6 +80,8 @@ namespace ksw
 		void pop_front();
 		void pop_back();
 
+		void clear();
+
 		inline size_t size()
 		{
 			return Size;
@@ -99,6 +101,11 @@ namespace ksw
 
 		iterator end()
 		{
+			if (0 == Size)
+			{
+				return nullptr;
+			}
+
 			return iterator(End->Next);
 		}
 
@@ -256,6 +263,22 @@ namespace ksw
 		End->Next = nullptr;
 		delete CurNode;
 		--Size;
+	}
+
+	template<typename Type>
+	inline void list<Type>::clear()
+	{
+		Node* CurNode = Start;
+		while (nullptr != CurNode)
+		{
+			Node* NextNode = CurNode->Next;
+			delete CurNode;
+			CurNode = NextNode;
+		}
+
+		Start = nullptr;
+		End = nullptr;
+		Size = 0;
 	}
 }
 

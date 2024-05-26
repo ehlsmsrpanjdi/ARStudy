@@ -42,4 +42,12 @@
 //	{
 //		std::cout << (*it) << " ";
 //	}
+//
+//	li.clear();
+//	std::cout << std::endl;
+//	for (it = li.begin(); it != li.end(); ++it)
+//	{
+//		std::cout << (*it) << " ";
+//	}
+//
 //}
