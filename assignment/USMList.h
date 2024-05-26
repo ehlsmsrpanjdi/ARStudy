@@ -11,7 +11,10 @@ public:
 	{
 	}
 	~USMItor() {
-
+		if (Next != nullptr) {
+			delete Next;
+			Next = nullptr;
+		}
 	}
 
 	// delete Function
@@ -20,27 +23,19 @@ public:
 	USMItor& operator=(const USMItor& _Other) = delete;
 	USMItor& operator=(USMItor&& _Other) noexcept = delete;
 
-
-	void SetPrev(USMItor* _Prev) {
-		if (nullptr != _Prev) {
-			Prev->SetPrev(_Prev);
-		}
-		else {
-			Prev = _Prev;
-		}
-	}
-
-	void SetNext(USMItor* _Next) {
-		if (nullptr != Next) {
-			Next->SetNext(_Next);
-		}
-		else {
-			Next = _Next;
-		}
-	}
 	USMItor<Type>* Prev = nullptr;
 	USMItor<Type>* Next = nullptr;
 	Type Value;
+	USMItor* operator++() {
+		return Next;
+	}
+
+	USMItor operator++(int) {
+		USMItor* Temp;
+		Temp = this;
+		 this = Next;
+		return Temp;
+	}
 };
 
 
@@ -52,7 +47,7 @@ public:
 	// constrcuter destructer
 	USMList() {}
 	~USMList() {
-
+		delete Head;
 	}
 
 	// delete Function
@@ -66,6 +61,13 @@ public:
 	USMItor<Type>* Begin();
 	USMItor<Type>* End();
 	int Size();
+	void Clear();
+	bool Empty() {
+		if (ListSize >= 1) {
+			return false;
+		}
+		return true;
+	}
 
 private:
 	USMItor<Type>* Head = nullptr;
@@ -80,14 +82,19 @@ inline void USMList<Type>::PushBack(Type _Type)
 	USMItor<Type>* Node = new USMItor(_Type);
 	if (nullptr == Head) {
 		Head = Node;
-	}
-
-
-	if (nullptr == Tail) {
 		Tail = Node;
 	}
+	
+	else if(Head == Tail){
+		Tail = Node;
+		Head->Next = Tail;
+		Tail->Prev = Head;
+	}
+
 	else {
-		Tail->SetNext(Node);
+		Tail->Next = Node;
+		Node->Prev = Tail;
+		Tail = Node;
 	}
 }
 
@@ -98,12 +105,19 @@ inline void USMList<Type>::PushFront(Type _Type)
 	USMItor<Type>* Node = new USMItor(_Type);
 	if (nullptr == Head) {
 		Head = Node;
-	}
-	else {
-		Tail->SetPrev(Node);
-	}
-	if (nullptr == Tail) {
 		Tail = Node;
+	}
+
+	else if (Head == Tail) {
+		Head = Node;
+		Head->Next = Tail;
+		Tail->Prev = Head;
+	}
+
+	else {
+		Head->Prev = Node;
+		Node->Next = Head;
+		Head = Node;
 	}
 }
 
@@ -123,4 +137,13 @@ template<typename Type>
 inline int USMList<Type>::Size()
 {
 	return ListSize;
+}
+
+template<typename Type>
+inline void USMList<Type>::Clear()
+{
+	delete Head;
+	Head = nullptr;
+	Tail = nullptr;
+	ListSize = 0;
 }
