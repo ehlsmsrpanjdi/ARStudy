@@ -132,12 +132,21 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="YndooList.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="YndooList.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="YndooMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

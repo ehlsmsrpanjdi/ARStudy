@@ -27,10 +27,19 @@
     <ClInclude Include="USMList.h">
       <Filter>List\USM</Filter>
     </ClInclude>
+    <ClInclude Include="YndooList.h">
+      <Filter>List\YonDoo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
       <Filter>List\USM</Filter>
+    </ClCompile>
+    <ClCompile Include="YndooList.cpp">
+      <Filter>List\YonDoo</Filter>
+    </ClCompile>
+    <ClCompile Include="YndooMain.cpp">
+      <Filter>List\YonDoo</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
