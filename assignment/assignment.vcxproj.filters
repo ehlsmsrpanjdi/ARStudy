@@ -25,6 +25,9 @@
     <Filter Include="List\JW">
       <UniqueIdentifier>{001bae8b-84df-49a6-9413-309b4607e4df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="List\LSJ">
+      <UniqueIdentifier>{c9d5925d-2a2d-4783-ab62-8d6f09d58193}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -41,6 +44,9 @@
     </ClInclude>
     <ClInclude Include="YndooList.h">
       <Filter>List\YonDoo</Filter>
+    </ClInclude>
+    <ClInclude Include="LSJlist.h">
+      <Filter>List\LSJ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="YndooMain.cpp">
       <Filter>List\YonDoo</Filter>
+    </ClCompile>
+    <ClCompile Include="LSJlist.cpp">
+      <Filter>List\LSJ</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
