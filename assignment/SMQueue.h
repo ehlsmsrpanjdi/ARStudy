@@ -2,13 +2,19 @@
 
 template <typename Type>
 class Node {
+	template<typename Type> friend class SMQueue;
 public:
 	Node(Type _Type)
 		:Value(_Type)
 	{
 
 	}
+
+	~Node() {
+
+	}
 private:
+	Node<Type>* Next = nullptr;
 	Type Value;
 };
 
@@ -32,7 +38,15 @@ public:
 	SMQueue& operator=(SMQueue&& _Other) noexcept = delete;
 
 	void Push(Type _Type) {
-
+		Node<Type>* NewNode = new Node(_Type);
+		if (nullptr == Head) {
+			Head = NewNode;
+			Tail = NewNode;
+		}
+		else if(Head == Tail){
+			Tail->Next = NewNode;
+			Tail = NewNode;
+		}
 	}
 
 

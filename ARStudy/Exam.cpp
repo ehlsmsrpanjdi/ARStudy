@@ -1,9 +1,10 @@
 #include "PreCompile.h"
-#include <assignment/USMList.h>
+#include <assignment/SMQueue.h>
 int main() 
 {
 	LeakCheck;
-
+	SMQueue<int> Q;
+	Q.Push(3);
 }
 
 /*
