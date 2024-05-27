@@ -55,6 +55,9 @@
     <Filter Include="Queue\YD">
       <UniqueIdentifier>{90c42d7e-fd98-47b0-9a28-f47a15a6cba8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="List\SJ">
+      <UniqueIdentifier>{04956704-9579-4d5e-912d-2385b5ebda79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -74,6 +77,9 @@
     </ClInclude>
     <ClInclude Include="SMQueue.h">
       <Filter>Queue\SM</Filter>
+    </ClInclude>
+    <ClInclude Include="LSJList.h">
+      <Filter>List\SJ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,9 @@
     <Filter Include="Time">
       <UniqueIdentifier>{ffaf9dd7-d23b-4243-b8ae-f4b46ad6d4cf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TestHelper">
+      <UniqueIdentifier>{0ecf4ec5-15f1-452c-af47-a22b8d60755c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineDebug.h">
@@ -21,6 +24,9 @@
     <ClInclude Include="EngineTime.h">
       <Filter>Time</Filter>
     </ClInclude>
+    <ClInclude Include="TestHelper.h">
+      <Filter>TestHelper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -31,6 +37,9 @@
     </ClCompile>
     <ClCompile Include="EngineTime.cpp">
       <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="TestHelper.cpp">
+      <Filter>TestHelper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

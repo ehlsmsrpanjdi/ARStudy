@@ -1,37 +1,35 @@
 #include "PreCompile.h"
-#include <assignment/USMList.h>
+#include <assignment/SMQueue.h>
+
 int main() 
 {
 	LeakCheck;
 	
-	EngineTime Timer;
-
 	{
-		Timer.Reset();
+		TimeTest("JWList");
 
 		JWList<int> List;
 		for (int i = 0; i < 10000000; ++i)
 		{
 			List.push_back(i);
 		}
-
-		double Time = Timer.TimeCheck();
-
-		std::cout << "JWList: " << Time << "ÃÊ" << std::endl;
 	}
 	
 	{
-		Timer.Reset();
+		TimeTest("std::list");
 
 		std::list<int> List;
 		for (int i = 0; i < 10000000; ++i)
 		{
 			List.push_back(i);
 		}
+	}
 
-		double Time = Timer.TimeCheck();
+	{
+		TimeTest("SMQueue");
 
-		std::cout << "std::list: " << Time << "ÃÊ" << std::endl;
+		SMQueue<int> Q;
+		Q.Push(3);
 	}
 }
 

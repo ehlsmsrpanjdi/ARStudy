@@ -1,7 +1,5 @@
 #pragma once
-#include <Windows.h>
 
-// Ό³Έν :
 class EngineTime
 {
 public:
@@ -23,4 +21,3 @@ private:
 	LARGE_INTEGER Count;
 	LARGE_INTEGER Frequency;
 };
-
