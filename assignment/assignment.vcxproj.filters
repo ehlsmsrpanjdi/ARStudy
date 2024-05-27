@@ -45,7 +45,7 @@
     <ClInclude Include="YndooList.h">
       <Filter>List\YonDoo</Filter>
     </ClInclude>
-    <ClInclude Include="LSJlist.h">
+    <ClInclude Include="LSJList.h">
       <Filter>List\LSJ</Filter>
     </ClInclude>
   </ItemGroup>
@@ -68,7 +68,7 @@
     <ClCompile Include="YndooMain.cpp">
       <Filter>List\YonDoo</Filter>
     </ClCompile>
-    <ClCompile Include="LSJlist.cpp">
+    <ClCompile Include="LSJList.cpp">
       <Filter>List\LSJ</Filter>
     </ClCompile>
   </ItemGroup>

@@ -168,7 +168,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="LSJlist.h">
+    <ClInclude Include="LSJList.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -194,7 +194,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="LSJlist.cpp">
+    <ClCompile Include="LSJList.cpp">
       <SubType>
       </SubType>
     </ClCompile>

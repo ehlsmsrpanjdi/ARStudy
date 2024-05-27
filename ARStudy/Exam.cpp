@@ -1,18 +1,39 @@
 #include "PreCompile.h"
-#include <assignment/USMList.h>
+#include <vector>
+
 int main() 
 {
 	LeakCheck;
-	USMList<int> a;
-	a.PushBack(1);
-	a.PushBack(2);
-	a.PushBack(3);
-	a.PushBack(4);
+	
+	EngineTime Timer;
 
+	{
+		Timer.Reset();
 
+		JWList<int> List;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			List.push_back(i);
+		}
 
-	a.Remove(3);
-	int c = 0;
+		double Time = Timer.TimeCheck();
+
+		std::cout << "JWList: " << Time << "ÃÊ" << std::endl;
+	}
+	
+	{
+		Timer.Reset();
+
+		std::list<int> List;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			List.push_back(i);
+		}
+
+		double Time = Timer.TimeCheck();
+
+		std::cout << "std::list: " << Time << "ÃÊ" << std::endl;
+	}
 }
 
 /*
