@@ -53,5 +53,14 @@
     <ClCompile Include="KSWList.cpp">
       <Filter>List\SuWon</Filter>
     </ClCompile>
+    <ClCompile Include="JWList.cpp">
+      <Filter>List\JW</Filter>
+    </ClCompile>
+    <ClCompile Include="YndooList.cpp">
+      <Filter>List\YonDoo</Filter>
+    </ClCompile>
+    <ClCompile Include="YndooMain.cpp">
+      <Filter>List\YonDoo</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

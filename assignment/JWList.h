@@ -1,5 +1,4 @@
 #pragma once
-#include <list>
 
 template<typename DataType>
 class JWList
