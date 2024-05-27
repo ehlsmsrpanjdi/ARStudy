@@ -25,6 +25,36 @@
     <Filter Include="List\JW">
       <UniqueIdentifier>{001bae8b-84df-49a6-9413-309b4607e4df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Queue">
+      <UniqueIdentifier>{82c07c84-e72a-4a83-9394-9e38eca81748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\JW">
+      <UniqueIdentifier>{171a0eda-cd1d-4e1c-ba3f-6328ef6dd5cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\JY">
+      <UniqueIdentifier>{240677d1-d180-412c-b6d2-a0af21588e1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\SJ">
+      <UniqueIdentifier>{1eccee70-460f-4bba-bede-cdde7eaa417b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\SM">
+      <UniqueIdentifier>{9616ebc5-059a-42ed-a4fc-21bb69d2105d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\SW">
+      <UniqueIdentifier>{3acb8e70-a28e-4382-bdc1-b605ab4d3652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\KY">
+      <UniqueIdentifier>{abe71504-f8ed-4d50-89d9-97ef0a032a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\KT">
+      <UniqueIdentifier>{3c9dbd23-7a46-44c9-8529-28d3edf6e6d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\TH">
+      <UniqueIdentifier>{c19e30ac-38b2-4e1e-8c44-bc7cc1a1f99e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queue\YD">
+      <UniqueIdentifier>{90c42d7e-fd98-47b0-9a28-f47a15a6cba8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
