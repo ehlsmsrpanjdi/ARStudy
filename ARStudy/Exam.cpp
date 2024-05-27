@@ -3,16 +3,7 @@
 int main() 
 {
 	LeakCheck;
-	USMList<int> a;
-	a.PushBack(1);
-	a.PushBack(2);
-	a.PushBack(3);
-	a.PushBack(4);
 
-
-
-	a.Remove(3);
-	int c = 0;
 }
 
 /*

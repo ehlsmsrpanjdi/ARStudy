@@ -172,6 +172,10 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="SMQueue.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="USMList.h">
       <SubType>
       </SubType>
@@ -182,10 +186,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="JWList.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="KSWList.cpp">
       <SubType>
       </SubType>
@@ -202,11 +202,6 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="YndooList.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="YndooMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
