@@ -92,8 +92,5 @@
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
-    <ClCompile Include="KSWList.cpp">
-      <Filter>List\SW</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

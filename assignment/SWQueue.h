@@ -2,6 +2,8 @@
 
 namespace ksw
 {
+	// 설명 : queue 클래스
+	 
 	template<typename Type>
 	class queue
 	{
