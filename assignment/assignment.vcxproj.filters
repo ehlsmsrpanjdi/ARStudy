@@ -96,6 +96,9 @@
     <ClInclude Include="JWQueue.h">
       <Filter>Queue\JW</Filter>
     </ClInclude>
+    <ClInclude Include="THQueue.h">
+      <Filter>Queue\TH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
