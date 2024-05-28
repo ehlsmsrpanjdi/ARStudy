@@ -2,14 +2,17 @@
 
 namespace ksw
 {
-	// 설명 : list 클래스
-
 	template<typename Type>
 	class list
 	{
 	private:
 		class Node
 		{
+		public:
+			Node() {};
+			Node(Type _Data) : Data(_Data) {};
+			~Node() {};
+
 		public:
 			Node* Prev = nullptr;
 			Node* Next = nullptr;
@@ -22,11 +25,7 @@ namespace ksw
 			friend class list;
 		public:
 			iterator() {};
-
-			iterator(Node* _CurNode)
-				: CurNode(_CurNode)
-			{};
-
+			iterator(Node* _CurNode) : CurNode(_CurNode) {};
 			~iterator() {};
 
 			inline iterator& operator++()
@@ -62,21 +61,14 @@ namespace ksw
 		};
 
 	public:
-		// constructor destructor
 		list();
 		list(size_t _Size);
 		list(Type _Data, size_t _Size);
 		~list();
 
-		// delete Function
-		list(const list& _Other) = delete;
-		list(list&& _Other) noexcept = delete;
-		list& operator=(const list& _Other) = delete;
-		list& operator=(list&& _Other) noexcept = delete;
-
 	public:
-		inline Type front();
-		inline Type back();
+		inline Type& front();
+		inline Type& back();
 
 		inline void push_front(const Type& _Data);
 		inline void push_back(const Type& _Data);
@@ -112,8 +104,7 @@ namespace ksw
 
 		inline iterator insert(iterator& _Iter, const Type& _Data)
 		{
-			Node* NewNode = new Node();
-			NewNode->Data = _Data;
+			Node* NewNode = new Node(_Data);
 
 			Node* CurNode = NewNode;
 			Node* PrevNode = _Iter.CurNode->Prev;
@@ -215,22 +206,31 @@ namespace ksw
 	}
 
 	template<typename Type>
-	inline Type list<Type>::front()
+	inline Type& list<Type>::front()
 	{
+		if (0 == Size)
+		{
+			MsgBoxAssert("비어있는 list 입니다.");
+		}
+
 		return Start->Next->Data;
 	}
 
 	template<typename Type>
-	inline Type list<Type>::back()
+	inline Type& list<Type>::back()
 	{
+		if (0 == Size)
+		{
+			MsgBoxAssert("비어있는 list 입니다.");
+		}
+
 		return End->Prev->Data;
 	}
 
 	template<typename Type>
 	inline void list<Type>::push_front(const Type& _Data)
 	{
-		Node* NewNode = new Node;
-		NewNode->Data = _Data;
+		Node* NewNode = new Node(_Data);
 
 		Node* NextNode = Start->Next;
 		Start->Next = NewNode;
@@ -245,8 +245,7 @@ namespace ksw
 	template<typename Type>
 	inline void list<Type>::push_back(const Type& _Data)
 	{
-		Node* NewNode = new Node;
-		NewNode->Data = _Data;
+		Node* NewNode = new Node(_Data);
 
 		Node* PrevNode = End->Prev;
 		End->Prev = NewNode;

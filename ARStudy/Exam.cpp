@@ -1,18 +1,15 @@
 #include "PreCompile.h"
-#include <assignment/SMQueue.h>
-#include <assignment/KYQueue.h>
-#include <assignment/SJQueue.h>
-#include <assignment/YDQueue.h>
+
 
 int main() 
 {
 	LeakCheck;
-	{
-		TimeTest("SMQueue");
+	//{
+	//	TimeTest("SMQueue");
 
-		SMQueue<int> Q;
-		Q.Push(3);
-	}
+	//	SMQueue<int> Q;
+	//	Q.Push(3);
+	//}
 
 	{
 		TimeTest("SJQueue");
