@@ -27,23 +27,16 @@ int main()
 
 	// KYQueue
 	{
-		{
-			KYQueue Q;
+		TimeTest("KYQueue");
 
-			Q.push(1);
-			bool Value = Q.empty();
-			
-			std::cout << Value << std::endl;
+		KYQueue<int> KYQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			KYQ.push(i);
 		}
-
-		
+		for (int i = 0; i < 10000000; ++i)
 		{
-			//std::queue<int> Q;
-			//
-			//Q.push()
-			//bool Value = Q.empty();
-
-			//std::cout << Value << std::endl;
+			KYQ.pop();
 		}
 	}
 

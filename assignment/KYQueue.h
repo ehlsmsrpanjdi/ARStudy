@@ -1,8 +1,7 @@
 #pragma once
 
 
-typedef int Type;
-//template<typename Type>
+template<typename Type>
 class KYQueue
 {
 private:
@@ -63,25 +62,32 @@ public:
 
 	inline void pop()
 	{
-		// 아무것도 없다면 반환 (원래는 터뜨려야 함)
-		if (nullptr == FirstNode && nullptr == LastNode)
+		if (FirstNode == LastNode)
 		{
-			return;
+			// 아무것도 없다면 반환 (원래는 터뜨려야 함)
+			if (nullptr == FirstNode)
+			{
+				return;
+			}
+			else   // 하나만 남아있을 때
+			{
+				delete FirstNode;
+				FirstNode = nullptr;
+				LastNode = nullptr;
+				return;
+			}
 		}
+		else
+		{
+			// 두개 이상 남아있을 때
+			QNode* ReleaseNode = FirstNode;
 
+			FirstNode = FirstNode->NextNode;
+			FirstNode->PrevNode = nullptr;
 
-		// 하나만 남아있을 때
-
-
-		// 두개 이상 남아있을 때
-
-
-		/*QNode* ReleaseNode = FirstNode;
-
-		FirstNode = FirstNode->NextNode;
-
-		delete ReleaseNode;
-		ReleaseNode = nullptr;*/
+			delete ReleaseNode;
+			ReleaseNode = nullptr;
+		}
 	}
 	
 
