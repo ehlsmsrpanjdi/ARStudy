@@ -43,7 +43,7 @@ public:
 			Head = NewNode;
 			Tail = NewNode;
 		}
-		else if(Head == Tail){
+		else {
 			Tail->Next = NewNode;
 			Tail = NewNode;
 		}
