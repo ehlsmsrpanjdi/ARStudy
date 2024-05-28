@@ -59,8 +59,29 @@ public:
 			NewNode->PrevNode = LastNode;
 			LastNode = NewNode;
 		}
+	}
 
-		return;
+	inline void pop()
+	{
+		// 아무것도 없다면 반환 (원래는 터뜨려야 함)
+		if (nullptr == FirstNode && nullptr == LastNode)
+		{
+			return;
+		}
+
+
+		// 하나만 남아있을 때
+
+
+		// 두개 이상 남아있을 때
+
+
+		/*QNode* ReleaseNode = FirstNode;
+
+		FirstNode = FirstNode->NextNode;
+
+		delete ReleaseNode;
+		ReleaseNode = nullptr;*/
 	}
 	
 
