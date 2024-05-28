@@ -164,6 +164,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="JWQueue.h" />
     <ClInclude Include="KSWList.h">
       <SubType>
       </SubType>
