@@ -7,3 +7,4 @@
 #include <assignment/LSJList.h>
 
 #include <assignment/SWQueue.h>
+#include <assignment/SJQueue.h>

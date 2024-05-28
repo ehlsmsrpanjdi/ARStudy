@@ -4,32 +4,26 @@
 int main() 
 {
 	LeakCheck;
-	
-	{
-		TimeTest("JWList");
-
-		JWList<int> List;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			List.push_back(i);
-		}
-	}
-	
-	{
-		TimeTest("std::list");
-
-		std::list<int> List;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			List.push_back(i);
-		}
-	}
 
 	{
 		TimeTest("SMQueue");
 
 		SMQueue<int> Q;
 		Q.Push(3);
+	}
+
+	{
+		TimeTest("SJQueue");
+
+		lsj::queue<int> Queue;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			Queue.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			Queue.pop();
+		}
 	}
 }
 
