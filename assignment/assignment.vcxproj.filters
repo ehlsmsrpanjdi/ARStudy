@@ -90,6 +90,9 @@
     <ClInclude Include="KYQueue.h">
       <Filter>Queue\KY</Filter>
     </ClInclude>
+    <ClInclude Include="YDQueue.h">
+      <Filter>Queue\YD</Filter>
+    </ClInclude>
     <ClInclude Include="JWQueue.h">
       <Filter>Queue\JW</Filter>
     </ClInclude>

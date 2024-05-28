@@ -1,10 +1,12 @@
 #include "PreCompile.h"
 #include <assignment/SMQueue.h>
+#include <assignment/KYQueue.h>
+#include <assignment/SJQueue.h>
+#include <assignment/YDQueue.h>
 
 int main() 
 {
 	LeakCheck;
-
 	{
 		TimeTest("SMQueue");
 
@@ -23,6 +25,42 @@ int main()
 		for (int i = 0; i < 10000000; ++i)
 		{
 			Queue.pop();
+		}
+	}
+
+	// KYQueue
+	{
+		{
+			KYQueue Q;
+
+			Q.push(1);
+			bool Value = Q.empty();
+			
+			std::cout << Value << std::endl;
+		}
+
+		
+		{
+			//std::queue<int> Q;
+			//
+			//Q.push()
+			//bool Value = Q.empty();
+
+			//std::cout << Value << std::endl;
+		}
+	}
+
+	{
+		TimeTest("YDQueue");
+
+		YDQueue<int> ydQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			ydQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			ydQ.pop();
 		}
 	}
 }
