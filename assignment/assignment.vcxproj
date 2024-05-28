@@ -168,6 +168,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="KYQueue.h" />
     <ClInclude Include="SJQueue.h">
       <SubType>
       </SubType>
