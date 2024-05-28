@@ -5,3 +5,5 @@
 #include <assignment/KSWList.h>
 #include <assignment/JWList.h>
 #include <assignment/LSJList.h>
+
+#include <assignment/SWQueue.h>
