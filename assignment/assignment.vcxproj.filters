@@ -13,9 +13,6 @@
     <Filter Include="List\Absent">
       <UniqueIdentifier>{c96a7082-333b-47ab-8814-7e4aac0ea457}</UniqueIdentifier>
     </Filter>
-    <Filter Include="List\SuWon">
-      <UniqueIdentifier>{6c652338-6af2-414d-a937-db462fcf50ad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="List\JYoon">
       <UniqueIdentifier>{e8d8cd7f-6c11-4190-963d-b6f3cc18b20c}</UniqueIdentifier>
     </Filter>
@@ -58,13 +55,16 @@
     <Filter Include="List\SJ">
       <UniqueIdentifier>{04956704-9579-4d5e-912d-2385b5ebda79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="List\SW">
+      <UniqueIdentifier>{6c652338-6af2-414d-a937-db462fcf50ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
       <Filter>List\USM</Filter>
     </ClInclude>
     <ClInclude Include="KSWList.h">
-      <Filter>List\SuWon</Filter>
+      <Filter>List\SW</Filter>
     </ClInclude>
     <ClInclude Include="PreCompile.h">
       <Filter>PreCompile</Filter>
@@ -90,7 +90,7 @@
       <Filter>PreCompile</Filter>
     </ClCompile>
     <ClCompile Include="KSWList.cpp">
-      <Filter>List\SuWon</Filter>
+      <Filter>List\SW</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
