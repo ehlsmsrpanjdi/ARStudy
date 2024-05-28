@@ -43,19 +43,21 @@ public:
 
 	inline void push(const Type& _Data)
 	{
+		QNode* NewNode = new QNode();
+		NewNode->Data = _Data;
+		
 		// 데이터가 아예 없을 때
 		if (nullptr == FirstNode && nullptr == LastNode)
 		{
-			QNode* NewNode = new QNode();
-			NewNode->Data = _Data;
-
 			FirstNode = NewNode;
 			LastNode = NewNode;
 
 		}
 		else  // 데이터가 한 개 이상일 때
 		{
-
+			LastNode->NextNode = NewNode;
+			NewNode->PrevNode = LastNode;
+			LastNode = NewNode;
 		}
 
 		return;
