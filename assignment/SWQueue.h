@@ -2,14 +2,17 @@
 
 namespace ksw
 {
-	// 설명 : queue 클래스
-	 
 	template<typename Type>
 	class queue
 	{
 	private:
 		class Node
 		{
+		public:
+			Node() {};
+			Node(Type _Data) : Data(_Data) {};
+			~Node() {};
+
 		public:
 			Node* Prev = nullptr;
 			Node* Next = nullptr;
@@ -94,8 +97,7 @@ namespace ksw
 	template<typename Type>
 	inline void queue<Type>::push(const Type& _Data)
 	{
-		Node* NewNode = new Node();
-		NewNode->Data = _Data;
+		Node* NewNode = new Node(_Data);
 
 		Node* PrevNode = End->Prev;
 		PrevNode->Next = NewNode;

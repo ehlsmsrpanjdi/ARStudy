@@ -84,6 +84,21 @@
     <ClInclude Include="SWQueue.h">
       <Filter>Queue\SW</Filter>
     </ClInclude>
+    <ClInclude Include="SJQueue.h">
+      <Filter>Queue\SJ</Filter>
+    </ClInclude>
+    <ClInclude Include="KYQueue.h">
+      <Filter>Queue\KY</Filter>
+    </ClInclude>
+    <ClInclude Include="YDQueue.h">
+      <Filter>Queue\YD</Filter>
+    </ClInclude>
+    <ClInclude Include="JWQueue.h">
+      <Filter>Queue\JW</Filter>
+    </ClInclude>
+    <ClInclude Include="THQueue.h">
+      <Filter>Queue\TH</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">

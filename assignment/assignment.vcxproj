@@ -164,7 +164,13 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="JWQueue.h" />
     <ClInclude Include="KSWList.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="KYQueue.h" />
+    <ClInclude Include="SJQueue.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -181,7 +187,12 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="THQueue.h" />
     <ClInclude Include="USMList.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="YDQueue.h">
       <SubType>
       </SubType>
     </ClInclude>

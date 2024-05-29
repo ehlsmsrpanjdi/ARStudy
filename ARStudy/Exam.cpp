@@ -1,35 +1,63 @@
 #include "PreCompile.h"
-#include <assignment/SMQueue.h>
+
 
 int main() 
 {
 	LeakCheck;
-	
-	{
-		TimeTest("JWList");
+	//{
+	//	TimeTest("SMQueue");
 
-		JWList<int> List;
+	//	SMQueue<int> Q;
+	//	Q.Push(3);
+	//}
+
+	{
+		TimeTest("SJQueue");
+
+		lsj::queue<int> Queue;
 		for (int i = 0; i < 10000000; ++i)
 		{
-			List.push_back(i);
+			Queue.push(i);
 		}
-	}
-	
-	{
-		TimeTest("std::list");
-
-		std::list<int> List;
 		for (int i = 0; i < 10000000; ++i)
 		{
-			List.push_back(i);
+			Queue.pop();
+		}
+	}
+
+	// KYQueue
+	{
+		TimeTest("KYQueue");
+
+		KYQueue<int> KYQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			KYQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			KYQ.pop();
 		}
 	}
 
 	{
-		TimeTest("SMQueue");
+		TimeTest("YDQueue");
 
-		SMQueue<int> Q;
-		Q.Push(3);
+		YDQueue<int> ydQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			ydQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			ydQ.pop();
+		}
+	}
+
+	// THQueue
+	{
+		THQueue<int> thQ;
+
 	}
 }
 
