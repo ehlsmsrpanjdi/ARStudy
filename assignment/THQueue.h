@@ -9,7 +9,6 @@ private:
 	public:
 		Node* Prev = nullptr;
 		Node* Next = nullptr;
-
 		DataType Value;
 	};
 
@@ -25,7 +24,12 @@ public:
 
 	~THQueue()
 	{
-
+		while (FrontNode != nullptr)
+		{
+			Node* TempNode = FrontNode;
+			FrontNode = FrontNode->Next;
+			delete TempNode;
+		}
 	}
 
 	void empty()
@@ -48,12 +52,15 @@ public:
 
 	}
 
-	void push(int _Value)
+	void push(DataType _Value)
 	{
 		Node* NewNode = new Node();
-		NewNode->Prev = FrontNode;
+		NewNode->Prev = BackNode->Prev;
 		NewNode->Next = BackNode;
 		NewNode->Value = _Value;
+
+		BackNode->Prev->Next = NewNode;
+		BackNode->Prev = NewNode;
 	}
 
 	void emplace()
@@ -76,5 +83,4 @@ protected:
 private:
 	Node* FrontNode = nullptr;
 	Node* BackNode = nullptr;
-	DataType Value;
 };
