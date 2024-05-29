@@ -53,6 +53,12 @@ int main()
 			ydQ.pop();
 		}
 	}
+
+	// THQueue
+	{
+		THQueue<int> thQ;
+
+	}
 }
 
 /*

@@ -12,3 +12,4 @@
 #include <assignment/KYQueue.h>
 #include <assignment/SJQueue.h>
 #include <assignment/YDQueue.h>
+#include <assignment/THQueue.h>
