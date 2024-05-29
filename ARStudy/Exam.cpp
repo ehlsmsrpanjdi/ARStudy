@@ -56,8 +56,12 @@ int main()
 
 	// THQueue
 	{
-		THQueue<int> thQ;
-
+		TimeTest("THQueue");
+		//THQueue<int> thQ;
+		//for (int i = 0; i < 10000000; ++i)
+		//{
+		//	thQ.push(i);
+		//}
 	}
 }
 

@@ -6,16 +6,21 @@ class THQueue
 private:
 	class Node
 	{
-		Node* Front = nullptr;
-		Node* Back = nullptr;
+	public:
+		Node* Prev = nullptr;
+		Node* Next = nullptr;
+
 		DataType Value;
 	};
 
 public:
 	THQueue()
 	{
-		Front = new Node();
-		Back = new Node();
+		FrontNode = new Node();
+		BackNode = new Node();
+
+		FrontNode->Next = BackNode;
+		BackNode->Prev = FrontNode;
 	}
 
 	~THQueue()
@@ -23,7 +28,7 @@ public:
 
 	}
 
-	void empty() 
+	void empty()
 	{
 
 	}
@@ -43,9 +48,12 @@ public:
 
 	}
 
-	void push()
+	void push(int _Value)
 	{
-
+		Node* NewNode = new Node();
+		NewNode->Prev = FrontNode;
+		NewNode->Next = BackNode;
+		NewNode->Value = _Value;
 	}
 
 	void emplace()
@@ -66,7 +74,7 @@ public:
 protected:
 
 private:
-	Node* Front = nullptr;
-	Node* Back = nullptr;
+	Node* FrontNode = nullptr;
+	Node* BackNode = nullptr;
 	DataType Value;
 };
