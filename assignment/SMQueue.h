@@ -14,6 +14,13 @@ public:
 
 	}
 private:
+	void NodeRelease() {
+		if (nullptr != Next) {
+			Next->NodeRelease();
+			delete Next;
+			Next = nullptr;
+		}
+	}
 	Node<Type>* Next = nullptr;
 	Type Value;
 };
@@ -28,7 +35,8 @@ public:
 
 	}
 	~SMQueue() {
-
+		Head->NodeRelease();
+		delete Head;
 	}
 
 	// delete Function
@@ -37,10 +45,19 @@ public:
 	SMQueue& operator=(const SMQueue& _Other) = delete;
 	SMQueue& operator=(SMQueue&& _Other) noexcept = delete;
 
+	int Size() {
+		return QueueSize;
+	}
+
 	void Push(Type _Type) {
 		Node<Type>* NewNode = new Node(_Type);
+		++QueueSize;
 		if (nullptr == Head) {
 			Head = NewNode;
+			Tail = NewNode;
+		}
+		else if(Head == Tail){
+			Head->Next = NewNode;
 			Tail = NewNode;
 		}
 		else {
@@ -49,6 +66,14 @@ public:
 		}
 	}
 
+	Type Pop() {
+		--QueueSize;
+		Type Temp = Head->Value;
+		Node<Type>* Node = Head;
+		Head = Head->Next;
+		delete Node;
+		return Temp;
+	}
 
 private:
 	Node<Type>* Head = nullptr;
