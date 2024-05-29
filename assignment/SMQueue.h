@@ -35,8 +35,10 @@ public:
 
 	}
 	~SMQueue() {
-		Head->NodeRelease();
-		delete Head;
+		if (Head != nullptr) {
+			Head->NodeRelease();
+			delete Head;
+		}
 	}
 
 	// delete Function
@@ -56,7 +58,7 @@ public:
 			Head = NewNode;
 			Tail = NewNode;
 		}
-		else if(Head == Tail){
+		else if (Head == Tail) {
 			Head->Next = NewNode;
 			Tail = NewNode;
 		}
@@ -72,6 +74,10 @@ public:
 		Node<Type>* Node = Head;
 		Head = Head->Next;
 		delete Node;
+		if (0 == QueueSize) {
+			Tail = nullptr;
+			Head = nullptr;
+		}
 		return Temp;
 	}
 
