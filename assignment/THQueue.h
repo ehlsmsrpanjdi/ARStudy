@@ -70,7 +70,17 @@ public:
 
 	void pop()
 	{
-
+		Node* TempNode = FrontNode->Next;
+		if (TempNode != BackNode)
+		{
+			FrontNode->Next->Next->Prev = FrontNode;
+			FrontNode->Next = FrontNode->Next->Next;
+			delete TempNode;
+		}
+		else
+		{
+			return;
+		}
 	}
 
 	void swap()

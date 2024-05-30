@@ -62,6 +62,10 @@ int main()
 		{
 			thQ.push(i);
 		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			thQ.pop();
+		}
 	}
 }
 
