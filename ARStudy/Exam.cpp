@@ -101,6 +101,20 @@ int main()
 			JYQ.pop();
 		}
 	}
+
+
+	{
+		TimeTest("SWQueue");
+		ksw::queue<int> Q;
+		for (int i = 0; i < 10000000; ++i)
+		{	
+			Q.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			Q.pop();
+		}
+	}
 }
 
 /*
