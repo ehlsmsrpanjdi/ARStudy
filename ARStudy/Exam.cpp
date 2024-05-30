@@ -1,15 +1,9 @@
 #include "PreCompile.h"
-
+#include "assignment/JWQueue.h"
 
 int main() 
 {
 	LeakCheck;
-	//{
-	//	TimeTest("SMQueue");
-
-	//	SMQueue<int> Q;
-	//	Q.Push(3);
-	//}
 
 	{
 		TimeTest("SJQueue");
@@ -51,6 +45,74 @@ int main()
 		for (int i = 0; i < 10000000; ++i)
 		{
 			ydQ.pop();
+		}
+	}
+
+	{
+		TimeTest("SMQueue");
+
+		SMQueue<int> ydQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			ydQ.Push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			ydQ.Pop();
+		}
+	}
+
+	// THQueue
+	{
+		TimeTest("THQueue");
+		THQueue<int> thQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			thQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			thQ.pop();
+		}
+	}
+
+	{
+		TimeTest("JWQueue");
+		cjw::queue<int> thQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			thQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			thQ.pop();
+		}
+	}
+
+	{
+		TimeTest("JYQueue");
+		JYQueue<int> JYQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			JYQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			JYQ.pop();
+		}
+	}
+
+
+	{
+		TimeTest("SWQueue");
+		ksw::queue<int> Q;
+		for (int i = 0; i < 10000000; ++i)
+		{	
+			Q.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			Q.pop();
 		}
 	}
 }

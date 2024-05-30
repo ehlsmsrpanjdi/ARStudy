@@ -53,11 +53,11 @@ public:
 
 	void pop()
 	{
-		if (Start->Next == End)
+		/*if (Start->Next == End)
 		{
 			MsgBoxAssert("비어있는 연두큐에 손을 대다니!! 다메요!!");
 			return;
-		}
+		}*/
 		Node* Ptr = Start->Next;
 		Start->Next = Ptr->Next;
 		Ptr->Next->Prev = Start;
