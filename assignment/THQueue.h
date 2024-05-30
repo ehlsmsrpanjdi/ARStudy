@@ -32,14 +32,28 @@ public:
 		}
 	}
 
-	void empty()
+	bool empty()
 	{
-
+		if (FrontNode->Next == BackNode)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 
-	void size()
+	int size()
 	{
-
+		int count = 0;
+		Node* TempNode = FrontNode->Next;
+		while (TempNode != BackNode)
+		{
+			TempNode = TempNode->Next;
+			count++;
+		}
+		return count;
 	}
 
 	void front()
