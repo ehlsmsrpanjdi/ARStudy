@@ -68,9 +68,8 @@ public:
 		}
 	}
 
-	Type Pop() {
+	void Pop() {
 		--QueueSize;
-		Type Temp = Head->Value;
 		Node<Type>* Node = Head;
 		Head = Head->Next;
 		delete Node;
@@ -78,7 +77,6 @@ public:
 			Tail = nullptr;
 			Head = nullptr;
 		}
-		return Temp;
 	}
 
 private:
