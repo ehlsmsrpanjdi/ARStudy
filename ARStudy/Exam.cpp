@@ -10,7 +10,8 @@ int main()
 	//	SMQueue<int> Q;
 	//	Q.Push(3);
 	//}
-
+	
+	// SJQueue
 	{
 		TimeTest("SJQueue");
 
@@ -40,6 +41,7 @@ int main()
 		}
 	}
 
+	// YDQueue
 	{
 		TimeTest("YDQueue");
 
@@ -65,6 +67,20 @@ int main()
 		for (int i = 0; i < 10000000; ++i)
 		{
 			thQ.pop();
+		}
+	}
+
+	// JYQueue
+	{
+		TimeTest("JYQueue");
+		JYQueue<int> JYQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			JYQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			JYQ.pop();
 		}
 	}
 }
