@@ -11,6 +11,8 @@ int main()
 	//	Q.Push(3);
 	//}
 
+	int a = 1000;
+
 	{
 		TimeTest("SJQueue");
 
@@ -51,6 +53,20 @@ int main()
 		for (int i = 0; i < 10000000; ++i)
 		{
 			ydQ.pop();
+		}
+	}
+
+	{
+		TimeTest("SMQueue");
+
+		SMQueue<int> ydQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			ydQ.Push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			ydQ.Pop();
 		}
 	}
 
