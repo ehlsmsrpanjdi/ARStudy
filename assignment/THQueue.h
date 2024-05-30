@@ -1,4 +1,5 @@
 #pragma once
+#include <queue>
 
 template<typename DataType>
 class THQueue
@@ -9,32 +10,32 @@ private:
 	public:
 		Node* Prev = nullptr;
 		Node* Next = nullptr;
-		DataType Value;
+		DataType Value = DataType();
 	};
 
 public:
 	THQueue()
 	{
-		FrontNode = new Node();
-		BackNode = new Node();
+		FrontDummyNode = new Node();
+		BackDummyNode = new Node();
 
-		FrontNode->Next = BackNode;
-		BackNode->Prev = FrontNode;
+		FrontDummyNode->Next = BackDummyNode;
+		BackDummyNode->Prev = FrontDummyNode;
 	}
 
 	~THQueue()
 	{
-		while (FrontNode != nullptr)
+		while (FrontDummyNode != nullptr)
 		{
-			Node* TempNode = FrontNode;
-			FrontNode = FrontNode->Next;
+			Node* TempNode = FrontDummyNode;
+			FrontDummyNode = FrontDummyNode->Next;
 			delete TempNode;
 		}
 	}
 
 	bool empty()
 	{
-		if (FrontNode->Next == BackNode)
+		if (FrontDummyNode->Next == BackDummyNode)
 		{
 			return false;
 		}
@@ -47,8 +48,8 @@ public:
 	int size()
 	{
 		int count = 0;
-		Node* TempNode = FrontNode->Next;
-		while (TempNode != BackNode)
+		Node* TempNode = FrontDummyNode->Next;
+		while (TempNode != BackDummyNode)
 		{
 			TempNode = TempNode->Next;
 			count++;
@@ -56,25 +57,33 @@ public:
 		return count;
 	}
 
-	void front()
+	DataType& front()
 	{
-
+		if (FrontDummyNode->Next == BackDummyNode)
+		{
+			MsgBoxAssert("FrontNode가 존재하지 않습니다.");
+		}
+		return FrontDummyNode->Next->Value;
 	}
 
-	void back()
+	DataType& back()
 	{
-
+		if (BackDummyNode->Prev == FrontDummyNode)
+		{
+			MsgBoxAssert("BackNode가 존재하지 않습니다.");
+		}
+		return BackDummyNode->Prev->Value;
 	}
 
 	void push(DataType _Value)
 	{
 		Node* NewNode = new Node();
-		NewNode->Prev = BackNode->Prev;
-		NewNode->Next = BackNode;
+		NewNode->Prev = BackDummyNode->Prev;
+		NewNode->Next = BackDummyNode;
 		NewNode->Value = _Value;
 
-		BackNode->Prev->Next = NewNode;
-		BackNode->Prev = NewNode;
+		BackDummyNode->Prev->Next = NewNode;
+		BackDummyNode->Prev = NewNode;
 	}
 
 	void emplace()
@@ -84,11 +93,11 @@ public:
 
 	void pop()
 	{
-		Node* TempNode = FrontNode->Next;
-		if (TempNode != BackNode)
+		Node* TempNode = FrontDummyNode->Next;
+		if (TempNode != BackDummyNode)
 		{
-			FrontNode->Next->Next->Prev = FrontNode;
-			FrontNode->Next = FrontNode->Next->Next;
+			FrontDummyNode->Next->Next->Prev = FrontDummyNode;
+			FrontDummyNode->Next = FrontDummyNode->Next->Next;
 			delete TempNode;
 		}
 		else
@@ -97,7 +106,7 @@ public:
 		}
 	}
 
-	void swap()
+	void swap(THQueue _Queue0, THQueue _Queue1)
 	{
 
 	}
@@ -105,6 +114,6 @@ public:
 protected:
 
 private:
-	Node* FrontNode = nullptr;
-	Node* BackNode = nullptr;
+	Node* FrontDummyNode = nullptr;
+	Node* BackDummyNode = nullptr;
 };
