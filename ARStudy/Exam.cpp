@@ -4,14 +4,6 @@
 int main() 
 {
 	LeakCheck;
-	//{
-	//	TimeTest("SMQueue");
-
-	//	SMQueue<int> Q;
-	//	Q.Push(3);
-	//}
-
-	int a = 1000;
 
 	{
 		TimeTest("SJQueue");
@@ -107,6 +99,20 @@ int main()
 		for (int i = 0; i < 10000000; ++i)
 		{
 			JYQ.pop();
+		}
+	}
+
+
+	{
+		TimeTest("SWQueue");
+		ksw::queue<int> Q;
+		for (int i = 0; i < 10000000; ++i)
+		{	
+			Q.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			Q.pop();
 		}
 	}
 }
