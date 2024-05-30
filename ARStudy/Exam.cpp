@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-
+#include "assignment/JWQueue.h"
 
 int main() 
 {
@@ -81,6 +81,32 @@ int main()
 		for (int i = 0; i < 10000000; ++i)
 		{
 			thQ.pop();
+		}
+	}
+
+	{
+		TimeTest("JWQueue");
+		cjw::queue<int> thQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			thQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			thQ.pop();
+		}
+	}
+
+	{
+		TimeTest("JYQueue");
+		JYQueue<int> JYQ;
+		for (int i = 0; i < 10000000; ++i)
+		{
+			JYQ.push(i);
+		}
+		for (int i = 0; i < 10000000; ++i)
+		{
+			JYQ.pop();
 		}
 	}
 }
