@@ -56,6 +56,22 @@ namespace SM {
 			return (QueueSize > 0) ? false : true;
 		}
 
+		void Swap(SMQueue<Type>& _Queue) {
+			Node<Type>* NewNode = nullptr;
+			NewNode = Head;
+			Head = _Queue.Head;
+			_Queue.Head = NewNode;
+
+			NewNode = Tail;
+			Tail = _Queue.Tail;
+			_Queue.Tail = NewNode;
+
+			int tempsize = QueueSize;
+			QueueSize = _Queue.Size();
+			_Queue.QueueSize = tempsize;
+
+		}
+
 		void Push(Type _Type) {
 			Node<Type>* NewNode = new Node(_Type);
 			++QueueSize;
