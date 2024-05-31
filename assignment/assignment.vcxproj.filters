@@ -102,6 +102,9 @@
     <ClInclude Include="JYQueue.h">
       <Filter>Queue\JY</Filter>
     </ClInclude>
+    <ClInclude Include="KTQueue.h">
+      <Filter>Queue\KT</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
