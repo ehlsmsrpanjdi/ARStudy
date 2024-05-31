@@ -52,6 +52,10 @@ namespace SM {
 			return QueueSize;
 		}
 
+		bool Empty() {
+			return (QueueSize > 0) ? false : true;
+		}
+
 		void Push(Type _Type) {
 			Node<Type>* NewNode = new Node(_Type);
 			++QueueSize;
@@ -78,6 +82,14 @@ namespace SM {
 				Tail = nullptr;
 				Head = nullptr;
 			}
+		}
+
+		Type Front() {
+			return Head->Value;
+		}
+
+		Type Back() {
+			return Tail->Value;
 		}
 
 	private:

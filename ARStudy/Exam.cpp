@@ -1,120 +1,126 @@
 #include "PreCompile.h"
 #include "assignment/JWQueue.h"
 
-int main() 
+int main()
 {
 	LeakCheck;
 
-	{
-		TimeTest("SJQueue");
+	//{
+	//	TimeTest("SJQueue");
 
-		lsj::queue<int> Queue;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			Queue.push(i);
-		}
-		for (int i = 0; i < 10000000; ++i)
-		{
-			Queue.pop();
-		}
-	}
+	//	lsj::queue<int> Queue;
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		Queue.push(i);
+	//	}
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		Queue.pop();
+	//	}
+	//}
 
-	// KYQueue
-	{
-		TimeTest("KYQueue");
+	//// KYQueue
+	//{
+	//	TimeTest("KYQueue");
 
-		KYQueue<int> KYQ;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			KYQ.push(i);
-		}
-		for (int i = 0; i < 10000000; ++i)
-		{
-			KYQ.pop();
-		}
-	}
+	//	KYQueue<int> KYQ;
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		KYQ.push(i);
+	//	}
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		KYQ.pop();
+	//	}
+	//}
 
-	{
-		TimeTest("YDQueue");
+	//{
+	//	TimeTest("YDQueue");
 
-		YDQueue<int> ydQ;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			ydQ.push(i);
-		}
-		for (int i = 0; i < 10000000; ++i)
-		{
-			ydQ.pop();
-		}
-	}
+	//	YDQueue<int> ydQ;
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		ydQ.push(i);
+	//	}
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		ydQ.pop();
+	//	}
+	//}
 
-	{
-		TimeTest("SMQueue");
+	//{
+	//	TimeTest("SMQueue");
 
-		SMQueue<int> ydQ;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			ydQ.Push(i);
-		}
-		for (int i = 0; i < 10000000; ++i)
-		{
-			ydQ.Pop();
-		}
-	}
+	//	SMQueue<int> ydQ;
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		ydQ.Push(i);
+	//	}
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		ydQ.Pop();
+	//	}
+	//}
 
-	// THQueue
-	{
-		TimeTest("THQueue");
-		THQueue<int> thQ;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			thQ.push(i);
-		}
-		for (int i = 0; i < 10000000; ++i)
-		{
-			thQ.pop();
-		}
-	}
+	//// THQueue
+	//{
+	//	TimeTest("THQueue");
+	//	THQueue<int> thQ;
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		thQ.push(i);
+	//	}
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		thQ.pop();
+	//	}
+	//}
 
-	{
-		TimeTest("JWQueue");
-		cjw::queue<int> thQ;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			thQ.push(i);
-		}
-		for (int i = 0; i < 10000000; ++i)
-		{
-			thQ.pop();
-		}
-	}
+	//{
+	//	TimeTest("JWQueue");
+	//	cjw::queue<int> thQ;
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		thQ.push(i);
+	//	}
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		thQ.pop();
+	//	}
+	//}
 
-	{
-		TimeTest("JYQueue");
-		JYQueue<int> JYQ;
-		for (int i = 0; i < 10000000; ++i)
-		{
-			JYQ.push(i);
-		}
-		for (int i = 0; i < 10000000; ++i)
-		{
-			JYQ.pop();
-		}
-	}
+	//{
+	//	TimeTest("JYQueue");
+	//	JYQueue<int> JYQ;
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		JYQ.push(i);
+	//	}
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		JYQ.pop();
+	//	}
+	//}
 
 
-	{
-		TimeTest("SWQueue");
-		ksw::queue<int> Q;
-		for (int i = 0; i < 10000000; ++i)
-		{	
-			Q.push(i);
-		}
-		for (int i = 0; i < 10000000; ++i)
-		{
-			Q.pop();
-		}
-	}
+	//{
+	//	TimeTest("SWQueue");
+	//	ksw::queue<int> Q;
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{	
+	//		Q.push(i);
+	//	}
+	//	for (int i = 0; i < 10000000; ++i)
+	//	{
+	//		Q.pop();
+	//	}
+	//}
+
+	SM::SMQueue<int> a;
+	bool test = a.Empty();
+	a.Push(3);
+	test = a.Empty();
+	int asdf = 0;
 }
 
 /*
