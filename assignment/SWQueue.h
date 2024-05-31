@@ -29,6 +29,7 @@ namespace ksw
 		inline void push(const Type& _Data);
 		inline void pop();
 
+		inline void swap(queue& _Other);
 		inline void clear();
 
 		inline bool empty()
@@ -122,6 +123,22 @@ namespace ksw
 		}
 
 		--Size;
+	}
+
+	template<typename Type>
+	inline void queue<Type>::swap(queue& _Other)
+	{
+		Node* OtherHead = _Other.Head;
+		Node* OtherTail = _Other.Tail;
+		size_t OtherSize = _Other.Size;
+
+		_Other.Head = Head;
+		_Other.Tail = Tail;
+		_Other.Size = Size;
+
+		Head = OtherHead;
+		Tail = OtherTail;
+		Size = OtherSize;
 	}
 
 	template<typename Type>
