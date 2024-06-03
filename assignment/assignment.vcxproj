@@ -160,11 +160,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="JWCalculator.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="JWList.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="JWQueue.h" />
+    <ClInclude Include="JWUser.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="JYQueue.h" />
     <ClInclude Include="KSWList.h">
       <SubType>
@@ -207,6 +215,14 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="JWCalculator.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="JWUser.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="PreCompile.cpp">
       <SubType>
       </SubType>

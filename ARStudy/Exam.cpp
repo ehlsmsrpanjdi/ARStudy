@@ -5,6 +5,8 @@ int main()
 {
 	LeakCheck;
 
+	// Queue
+#if 0
 	{
 		TimeTest("SJQueue");
 
@@ -114,6 +116,15 @@ int main()
 		{
 			Q.pop();
 		}
+	}
+#endif
+
+	// Calculator
+	
+	//JWCalculator
+	{
+		JWUser Test;
+		Test.CalStart();
 	}
 }
 

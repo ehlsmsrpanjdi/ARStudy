@@ -58,6 +58,33 @@
     <Filter Include="List\SW">
       <UniqueIdentifier>{6c652338-6af2-414d-a937-db462fcf50ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Calculator">
+      <UniqueIdentifier>{f0c3aff9-6dde-465a-a445-2d549ef9d394}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Calculator\JW">
+      <UniqueIdentifier>{4a7d326d-8478-445b-8754-ed8a7dcab08b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Calculator\SJ">
+      <UniqueIdentifier>{583d3d1b-010b-4341-9445-a673c1be1d22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Calculator\YD">
+      <UniqueIdentifier>{5fb57f00-a630-414f-8a60-353a06b27471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Calculator\JY">
+      <UniqueIdentifier>{0d8d4e6e-2a85-4b14-9dae-bddfe2a98c5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Calculator\SM">
+      <UniqueIdentifier>{2fb4f9dd-69a8-4878-9e8d-6fe696eb1b0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Calculator\KY">
+      <UniqueIdentifier>{f90e0e11-507c-461d-8f95-8a3a99b2be11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Calculator\SW">
+      <UniqueIdentifier>{35683a2c-c121-4317-bd50-c49319641b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Calculator\TH">
+      <UniqueIdentifier>{6eef63b0-ef93-4bce-bcea-d897fce2db26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -105,6 +132,12 @@
     <ClInclude Include="KTQueue.h">
       <Filter>Queue\KT</Filter>
     </ClInclude>
+    <ClInclude Include="JWUser.h">
+      <Filter>Calculator\JW</Filter>
+    </ClInclude>
+    <ClInclude Include="JWCalculator.h">
+      <Filter>Calculator\JW</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -112,6 +145,12 @@
     </ClCompile>
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
+    </ClCompile>
+    <ClCompile Include="JWUser.cpp">
+      <Filter>Calculator\JW</Filter>
+    </ClCompile>
+    <ClCompile Include="JWCalculator.cpp">
+      <Filter>Calculator\JW</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

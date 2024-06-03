@@ -14,3 +14,5 @@
 #include <assignment/YDQueue.h>
 #include <assignment/THQueue.h>
 #include <assignment/JYQueue.h>
+
+#include <assignment/JWUser.h>
