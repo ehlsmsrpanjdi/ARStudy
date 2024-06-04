@@ -183,7 +183,15 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="KYCalculator.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="KYQueue.h" />
+    <ClInclude Include="KYUser.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="SJQueue.h">
       <SubType>
       </SubType>
@@ -225,6 +233,14 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="KTCalCulator.cpp" />
+    <ClCompile Include="KYCalculator.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="KYUser.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="PreCompile.cpp">
       <SubType>
       </SubType>

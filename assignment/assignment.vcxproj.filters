@@ -144,6 +144,12 @@
     <ClInclude Include="KTCalCulator.h">
       <Filter>Calculator\KT</Filter>
     </ClInclude>
+    <ClInclude Include="KYCalculator.h">
+      <Filter>Calculator\KY</Filter>
+    </ClInclude>
+    <ClInclude Include="KYUser.h">
+      <Filter>Calculator\KY</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -160,6 +166,12 @@
     </ClCompile>
     <ClCompile Include="KTCalCulator.cpp">
       <Filter>Calculator\KT</Filter>
+    </ClCompile>
+    <ClCompile Include="KYCalculator.cpp">
+      <Filter>Calculator\KY</Filter>
+    </ClCompile>
+    <ClCompile Include="KYUser.cpp">
+      <Filter>Calculator\KY</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
