@@ -26,7 +26,6 @@ protected:
 
 private:
 	std::string CalString = "";
-	std::function<void()> CalFunction = nullptr;
 	std::map<char, std::function<int(int, int)>> Operator = std::map<char, std::function<int(int, int)>>();
 	
 	std::vector<int> CalNum = std::vector<int>();
