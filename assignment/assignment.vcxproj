@@ -178,6 +178,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="KTCalCulator.h" />
     <ClInclude Include="KTQueue.h">
       <SubType>
       </SubType>
@@ -223,6 +224,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="KTCalCulator.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <SubType>
       </SubType>

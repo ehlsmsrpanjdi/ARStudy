@@ -85,6 +85,9 @@
     <Filter Include="Calculator\TH">
       <UniqueIdentifier>{6eef63b0-ef93-4bce-bcea-d897fce2db26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Calculator\KT">
+      <UniqueIdentifier>{a99c47a1-a73a-4525-b152-6314835f67e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -138,6 +141,9 @@
     <ClInclude Include="JWCalculator.h">
       <Filter>Calculator\JW</Filter>
     </ClInclude>
+    <ClInclude Include="KTCalCulator.h">
+      <Filter>Calculator\KT</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -151,6 +157,9 @@
     </ClCompile>
     <ClCompile Include="JWCalculator.cpp">
       <Filter>Calculator\JW</Filter>
+    </ClCompile>
+    <ClCompile Include="KTCalCulator.cpp">
+      <Filter>Calculator\KT</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
