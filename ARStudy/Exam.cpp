@@ -126,6 +126,12 @@ int main()
 		JWUser Test;
 		Test.CalStart();
 	}
+
+	// KYCalculator
+	{
+		KYUser KYU;
+		KYU.CalculateBegin();
+	}
 }
 
 /*

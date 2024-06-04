@@ -1,5 +1,7 @@
 #pragma once
 
+// 펑셔널, 람다로만 계산기 구현
+
 // 설명 :
 class KYCalculator
 {
@@ -14,9 +16,12 @@ public:
 	KYCalculator& operator=(const KYCalculator& _Other) = delete;
 	KYCalculator& operator=(KYCalculator&& _Other) noexcept = delete;
 
+
+
 protected:
 
 private:
+
 
 };
 

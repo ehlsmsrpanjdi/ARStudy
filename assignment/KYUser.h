@@ -14,6 +14,8 @@ public:
 	KYUser& operator=(const KYUser& _Other) = delete;
 	KYUser& operator=(KYUser&& _Other) noexcept = delete;
 
+	void CalculateBegin();
+
 protected:
 
 private:
