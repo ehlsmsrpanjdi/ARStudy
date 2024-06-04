@@ -1,5 +1,7 @@
 #pragma once
 #include <functional>
+#include <map>
+
 
 // 펑셔널, 람다로만 계산기 구현
 
@@ -25,5 +27,9 @@ protected:
 private:
 	std::string CalString = "";
 	std::function<void()> CalFunction = nullptr;
+	std::map<char, std::function<int(int, int)>> Operator = std::map<char, std::function<int(int, int)>>();
+	
+	std::vector<int> CalNum = std::vector<int>();
+	std::vector<char> CalOperator = std::vector<char>();
 };
 
