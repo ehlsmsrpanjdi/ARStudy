@@ -10,11 +10,11 @@ KTCalCulator::~KTCalCulator()
 }
 void KTCalCulator::Start()
 {
-	Operator('+', [=]
-
-		{
-		}
-	);
+	//Operator('+', [=]
+	//
+	//	{
+	//	}
+	//);
 	switch (Operator)
 	{
 	case'+':
