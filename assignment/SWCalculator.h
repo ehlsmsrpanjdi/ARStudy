@@ -19,17 +19,19 @@ namespace ksw
 		std::function<void()> Start;
 
 	private:
-		std::map<int, std::function<void(float)>> Calculation;
+		std::map<int, std::function<void(float, float)>> Operater;
 		std::function<int(char)> GetPriority;
 		std::function<bool(char, char)> CompPriority;
 		std::function<bool(char)> IsToken;
 		std::function<bool(char)> IsNum;
 		std::function<void(std::string_view)> ConvertToPostFix;
+		std::function<void()> CalCulation;
 
 	private:
-		std::stack<std::string> PostFix;
+		std::queue<std::string> PostFix;
+		std::stack<std::string> Result;
 		std::stack<char> Token;
-		float Temp = 0.0f;
+		float TempResult = 0.0f;
 
 	private:
 		enum ESymbol
@@ -42,9 +44,5 @@ namespace ksw
 			MINUS = '-',
 			SPACE = ' '
 		};
-
-
-
-
 	};
 }

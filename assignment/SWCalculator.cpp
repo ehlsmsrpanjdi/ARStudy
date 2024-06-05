@@ -5,10 +5,10 @@ namespace ksw
 {
 	calculator::calculator()
 	{
-		Calculation[ESymbol::PLUS]	= [=](float _Num) { Temp += _Num; };
-		Calculation[ESymbol::MINUS] = [=](float _Num) { Temp -= _Num; };
-		Calculation[ESymbol::MUL]	= [=](float _Num) { Temp *= _Num; };
-		Calculation[ESymbol::DIV]	= [=](float _Num) { Temp /= _Num; };
+		Operater[ESymbol::PLUS]		= [=](float _Num1, float _Num2) { float Temp = _Num2 + _Num1; Result.push(std::to_string(Temp)); };
+		Operater[ESymbol::MINUS]	= [=](float _Num1, float _Num2) { float Temp = _Num2 - _Num1; Result.push(std::to_string(Temp)); };
+		Operater[ESymbol::MUL]		= [=](float _Num1, float _Num2) { float Temp = _Num2 * _Num1; Result.push(std::to_string(Temp)); };
+		Operater[ESymbol::DIV]		= [=](float _Num1, float _Num2) { float Temp = _Num2 / _Num1; Result.push(std::to_string(Temp)); };
 
 		GetPriority = [](char _Input)->int
 			{
@@ -117,12 +117,40 @@ namespace ksw
 					}
 				}
 
-				while (true)
+				while (false == Token.empty())
 				{
+					std::string str;
+					str = Token.top();
+					PostFix.push(str);
+					Token.pop();
+				}				
+			};
 
+		CalCulation = [&]()
+			{
+				while (false == PostFix.empty())
+				{
+					std::string Front = PostFix.front();
+					
+					if (1 != Front.size() || true == IsNum(Front[0]))
+					{
+						Result.push(Front);
+						PostFix.pop();
+					}
+					else
+					{
+						PostFix.pop();
+
+						float Num1 = std::stof(Result.top());
+						Result.pop();
+
+						float Num2 = std::stof(Result.top());
+						Result.pop();
+
+						char Oper = Front[0];
+						Operater[Oper](Num1, Num2);
+					}
 				}
-
-				
 			};
 
 		CompPriority = [&](char _Top, char _Cur)->bool 
@@ -176,20 +204,13 @@ namespace ksw
 					std::getline(std::cin, Input);
 					
 					ConvertToPostFix(Input);
-
+					CalCulation();
 
 					// Ãâ·Â
-					std::cout << Temp << std::endl;
+					std::cout << Result.top() << std::endl;
+					Result.pop();
 				};
 			};
-
-		
-		
-		
-
-
-
-
 	}
 
 	calculator::~calculator()
