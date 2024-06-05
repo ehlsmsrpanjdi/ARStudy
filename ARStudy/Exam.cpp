@@ -1,12 +1,12 @@
 #include "PreCompile.h"
 #include "assignment/JWQueue.h"
-
 int main()
 {
 	LeakCheck;
 
-	
-
+	SMUser User;
+	User.Select(3, '+', 3);
+	int a = 0;
 }
 
 /*
