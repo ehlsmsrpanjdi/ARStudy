@@ -160,6 +160,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="SWCalculator.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="JWCalculator.h">
       <SubType>
       </SubType>
@@ -224,6 +228,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SWCalculator.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="JWCalculator.cpp">
       <SubType>
       </SubType>
