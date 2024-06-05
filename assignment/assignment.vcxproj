@@ -219,7 +219,15 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="YDCalculator.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="YDQueue.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="YDUser.h">
       <SubType>
       </SubType>
     </ClInclude>

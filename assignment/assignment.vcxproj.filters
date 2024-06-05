@@ -156,6 +156,12 @@
     <ClInclude Include="SMCal.h">
       <Filter>Calculator\SM</Filter>
     </ClInclude>
+    <ClInclude Include="YDCalculator.h">
+      <Filter>Calculator\YD</Filter>
+    </ClInclude>
+    <ClInclude Include="YDUser.h">
+      <Filter>Calculator\YD</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
