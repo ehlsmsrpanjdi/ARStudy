@@ -160,6 +160,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="SMCal.h" />
     <ClInclude Include="SWCalculator.h">
       <SubType>
       </SubType>
@@ -218,7 +219,15 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="YDCalculator.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="YDQueue.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="YDUser.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -228,6 +237,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SMCal.cpp" />
     <ClCompile Include="SWCalculator.cpp">
       <SubType>
       </SubType>
