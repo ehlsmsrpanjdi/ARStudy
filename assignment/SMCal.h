@@ -5,7 +5,6 @@ class SMCal {
 public:
 
 	std::function<int(int, int)> Fun;
-	std::function<void()> ValueResult;
 	int Result;
 };
 
