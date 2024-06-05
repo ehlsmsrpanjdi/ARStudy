@@ -153,6 +153,9 @@
     <ClInclude Include="SWCalculator.h">
       <Filter>Calculator\SW</Filter>
     </ClInclude>
+    <ClInclude Include="SMCal.h">
+      <Filter>Calculator\SM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -179,5 +182,6 @@
     <ClCompile Include="SWCalculator.cpp">
       <Filter>Calculator\SW</Filter>
     </ClCompile>
+    <ClCompile Include="SMCal.cpp" />
   </ItemGroup>
 </Project>

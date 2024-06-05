@@ -160,6 +160,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="SMCal.h" />
     <ClInclude Include="SWCalculator.h">
       <SubType>
       </SubType>
@@ -228,6 +229,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SMCal.cpp" />
     <ClCompile Include="SWCalculator.cpp">
       <SubType>
       </SubType>

@@ -1,5 +1,6 @@
 #include "PreCompile.h"
 #include "assignment/JWQueue.h"
+#include "assignment/SMCal.h"
 
 int main()
 {
@@ -119,26 +120,11 @@ int main()
 	}
 #endif
 
-	// Calculator
-	
-	////JWCalculator
-	//{
-	//	JWUser Test;
-	//	Test.CalStart();
-	//}
+	SMUser User;
+	User.Select(3, '+', 3);
 
-	//// KYCalculator
-	//{
-	//	KYUser KYU;
-	//	KYU.CalculateBegin();
-	//}
-
-	//{
-	//	ksw::calculator Cal;
-	//	Cal.Start();
-	//}
-
-
+	int a = User.Cal.Result;
+	int c = 0;
 
 }
 
