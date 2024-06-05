@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 class KTCalCulator
 {
 public:
@@ -11,13 +12,22 @@ public:
 	KTCalCulator& operator=(const KTCalCulator& _Other) = delete;
 	KTCalCulator& operator=(KTCalCulator&& _Other) noexcept = delete;
 
-	void Start();
-	void SetOperator();
-private	:
+	void Input();
 
-	char Operator;
-	float Num1 = 0;
-	float Num2 = 0;
-	float Result = 0;
+private	:
+	std::function<void(float,float,char)> Fun;
+	
+private:
+	float Result;
 };
 
+
+
+	
+
+
+	//if
+
+		//switch()
+	//Fun = [](){}
+	// 직접 구현하는게 아니라 함수 내부에서 구현해라 
