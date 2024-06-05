@@ -121,17 +121,25 @@ int main()
 
 	// Calculator
 	
-	//JWCalculator
-	{
-		JWUser Test;
-		Test.CalStart();
-	}
+	////JWCalculator
+	//{
+	//	JWUser Test;
+	//	Test.CalStart();
+	//}
 
-	// KYCalculator
-	{
-		KYUser KYU;
-		KYU.CalculateBegin();
-	}
+	//// KYCalculator
+	//{
+	//	KYUser KYU;
+	//	KYU.CalculateBegin();
+	//}
+
+	//{
+	//	ksw::calculator Cal;
+	//	Cal.Start();
+	//}
+
+
+
 }
 
 /*

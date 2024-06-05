@@ -16,19 +16,23 @@ namespace ksw
 		calculator& operator=(calculator&& _Other) noexcept = delete;
 
 	public:
-		void Start();
+		std::function<void()> Start;
 
 	private:
-		void Init();
-
-	private:
-		std::map<int, std::function<void(float)>> Operator;
+		std::map<int, std::function<void(float)>> Calculation;
 		std::function<int(char)> GetPriority;
-		std::stack<std::string> Memory;
+		std::function<bool(char, char)> CompPriority;
+		std::function<bool(char)> IsToken;
+		std::function<bool(char)> IsNum;
+		std::function<void(std::string_view)> ConvertToPostFix;
+
+	private:
+		std::stack<std::string> PostFix;
+		std::stack<char> Token;
 		float Temp = 0.0f;
 
 	private:
-		enum class ESymbol
+		enum ESymbol
 		{
 			L_PARENTHESIS = '(',
 			R_PARENTHESIS = ')',
@@ -38,6 +42,8 @@ namespace ksw
 			MINUS = '-',
 			SPACE = ' '
 		};
+
+
 
 
 	};
