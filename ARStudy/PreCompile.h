@@ -17,3 +17,4 @@
 
 #include <assignment/JWUser.h>
 #include <assignment/KYUser.h>
+#include <assignment/SWCalculator.h>

@@ -150,6 +150,9 @@
     <ClInclude Include="KYUser.h">
       <Filter>Calculator\KY</Filter>
     </ClInclude>
+    <ClInclude Include="SWCalculator.h">
+      <Filter>Calculator\SW</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -172,6 +175,9 @@
     </ClCompile>
     <ClCompile Include="KYUser.cpp">
       <Filter>Calculator\KY</Filter>
+    </ClCompile>
+    <ClCompile Include="SWCalculator.cpp">
+      <Filter>Calculator\SW</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
