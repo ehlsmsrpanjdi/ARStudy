@@ -1,16 +1,18 @@
 #include "PreCompile.h"
 #include "assignment/JWQueue.h"
 #include "assignment/YDUser.h"
+#include <assignment/SJRamyeon.h>
+
 int main()
 {
 	LeakCheck;
 
-	SMUser User;
-	User.Select(3, '+', 3);
-	int a = 0;
-
-	YDUser<int> Y;
-	int res = Y.InputExpression(3, '+', 7);
+	{
+		lsj::Store Store(4, 100000);
+		std::cout << "요리 전:" << Store.GetCookedCount() << std::endl;
+		Store.Cook();
+		std::cout << "요리 후:" << Store.GetCookedCount() << std::endl;
+	}
 }
 
 /*

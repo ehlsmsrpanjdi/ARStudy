@@ -88,6 +88,9 @@
     <Filter Include="Calculator\KT">
       <UniqueIdentifier>{a99c47a1-a73a-4525-b152-6314835f67e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ramyeon">
+      <UniqueIdentifier>{bd51367a-3800-4b84-bf2e-ebcc2eaf4cf6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -162,6 +165,9 @@
     <ClInclude Include="YDUser.h">
       <Filter>Calculator\YD</Filter>
     </ClInclude>
+    <ClInclude Include="SJRamyeon.h">
+      <Filter>Ramyeon</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -189,5 +195,8 @@
       <Filter>Calculator\SW</Filter>
     </ClCompile>
     <ClCompile Include="SMCal.cpp" />
+    <ClCompile Include="SJRamyeon.cpp">
+      <Filter>Ramyeon</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
