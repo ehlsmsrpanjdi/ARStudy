@@ -14,7 +14,9 @@ int main()
 		std::cout << "¿ä¸® ÈÄ:" << Store.GetCookedCount() << std::endl;
 	}
 
-
+	SMRM RM;
+	RM.Count(4, 1000000);
+	RM.Start();
 }
 
 /*
