@@ -169,6 +169,7 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="SMCal.h" />
+    <ClInclude Include="SMRM.h" />
     <ClInclude Include="SWCalculator.h">
       <SubType>
       </SubType>

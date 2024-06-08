@@ -198,6 +198,9 @@
     <ClInclude Include="KYRamyeon.h">
       <Filter>Ramyeon\KY</Filter>
     </ClInclude>
+    <ClInclude Include="SMRM.h">
+      <Filter>Ramyeon\SM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
