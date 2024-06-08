@@ -19,3 +19,6 @@
 #include <assignment/KYUser.h>
 #include <assignment/SWCalculator.h>
 #include <assignment/SMCal.h>
+
+
+#include <assignment/SMRM.h>

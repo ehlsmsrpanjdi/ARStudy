@@ -192,14 +192,14 @@
     <ClInclude Include="YDUser.h">
       <Filter>Calculator\YD</Filter>
     </ClInclude>
-    <ClInclude Include="SJRamyeon.h">
-      <Filter>Ramyeon</Filter>
-    </ClInclude>
     <ClInclude Include="KYRamyeon.h">
       <Filter>Ramyeon\KY</Filter>
     </ClInclude>
     <ClInclude Include="SMRM.h">
       <Filter>Ramyeon\SM</Filter>
+    </ClInclude>
+    <ClInclude Include="SJRamyeon.h">
+      <Filter>Ramyeon\SJ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -228,11 +228,11 @@
       <Filter>Calculator\SW</Filter>
     </ClCompile>
     <ClCompile Include="SMCal.cpp" />
-    <ClCompile Include="SJRamyeon.cpp">
-      <Filter>Ramyeon</Filter>
-    </ClCompile>
     <ClCompile Include="KYRamyeon.cpp">
       <Filter>Ramyeon\KY</Filter>
+    </ClCompile>
+    <ClCompile Include="SJRamyeon.cpp">
+      <Filter>Ramyeon\SJ</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

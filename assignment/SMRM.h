@@ -1,8 +1,46 @@
 #pragma once
+#include <thread>
+#include <atomic>
+#include <mutex>
+#include <vector>
 
 class SMRM {
+public:
+	void Boil() {
+		while (true)
+		{
+			--RamenCount;
+			++TotalCount;
+			if (RamenCount == 0) {
+				std::cout << "RamenCount" << RamenCount << std::endl;
+				std::cout << "TotalCount" << TotalCount << std::endl;
+				break;
+			}
+		}
+	}
 
+	void Count(int _ThreadCount, int _RamenCount) {
+		while (_ThreadCount) {
+			--_ThreadCount;
+			std::thread* T = new std::thread(Boil);
+			ThreadVec.push_back(T);
+		}
+	}
+
+	void Start() {
+		for (std::thread* TIndex : ThreadVec) {
+			TIndex->join();
+		}
+	}
+
+private:
+	std::atomic<int> RamenCount;
+	std::atomic<int> TotalCount;
+	std::vector<std::thread*> ThreadVec;
 };
+
+
+
 
 //#include <iostream>
 //#include <thread>

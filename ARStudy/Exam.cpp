@@ -13,6 +13,8 @@ int main()
 		Store.Cook();
 		std::cout << "¿ä¸® ÈÄ:" << Store.GetCookedCount() << std::endl;
 	}
+
+
 }
 
 /*
