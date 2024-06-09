@@ -23,3 +23,4 @@
 
 #include <assignment/SMRM.h>
 #include <assignment/KYRamyeon.h>
+#include <assignment/SWRamyeon.h>

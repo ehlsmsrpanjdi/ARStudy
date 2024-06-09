@@ -201,6 +201,9 @@
     <ClInclude Include="SJRamyeon.h">
       <Filter>Ramyeon\SJ</Filter>
     </ClInclude>
+    <ClInclude Include="SWRamyeon.h">
+      <Filter>Ramyeon\SW</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -227,12 +230,17 @@
     <ClCompile Include="SWCalculator.cpp">
       <Filter>Calculator\SW</Filter>
     </ClCompile>
-    <ClCompile Include="SMCal.cpp" />
     <ClCompile Include="KYRamyeon.cpp">
       <Filter>Ramyeon\KY</Filter>
     </ClCompile>
     <ClCompile Include="SJRamyeon.cpp">
       <Filter>Ramyeon\SJ</Filter>
+    </ClCompile>
+    <ClCompile Include="SMCal.cpp">
+      <Filter>Calculator\SM</Filter>
+    </ClCompile>
+    <ClCompile Include="SWRamyeon.cpp">
+      <Filter>Ramyeon\SW</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
