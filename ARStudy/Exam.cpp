@@ -20,7 +20,7 @@ int main()
 
 	{
 		KYRamyeon KYRMStore;
-		//KYRMStore.OrderSetting(4, 100000);
+		KYRMStore.OrderSetting(4, 100000);
 		KYRMStore.CookingStart();
 	}
 }

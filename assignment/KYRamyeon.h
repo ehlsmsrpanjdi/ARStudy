@@ -1,6 +1,8 @@
 #pragma once
 #include <thread>
 #include <functional>
+#include <atomic>
+
 
 // Ό³Έν :
 class KYRamyeon
@@ -24,13 +26,10 @@ public:
 protected:
 
 private:
-	//int GasRangeNum = -1;
-	//int RamenNum = -1;
-	int GasRangeNum = 4;
-	int RamenNum = 100000;
-	int CookingCount = 0;
+	int GasRangeNum = -1;
+	int RamenNum = -1;
+	std::atomic_int CookingCount = 0;
 
-	std::thread Function1;
-	std::vector<std::function<void()>> CookingThread;
+	std::vector<std::thread> CookingThread;
 };
 

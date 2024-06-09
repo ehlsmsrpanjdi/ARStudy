@@ -9,17 +9,12 @@ KYRamyeon::KYRamyeon()
 
 KYRamyeon::~KYRamyeon()
 {
-	if (true == Function1.joinable())
+	for (int i = 0; i < GasRangeNum; i++)
 	{
-		Function1.join();
-	}
-}
-
-void KYRamyeon::TestFunction()
-{
-	for (int i = 0; i < RamenNum; i++)
-	{
-		++CookingCount;
+		if (true == CookingThread[i].joinable())
+		{
+			CookingThread[i].join();
+		}
 	}
 }
 
@@ -31,9 +26,10 @@ void KYRamyeon::CookingStart()
 		return;
 	}
 
-	Function1 = std::thread(std::bind(&KYRamyeon::TestFunction, this));
-
-	Function1;
+	for (int i = 0; i < GasRangeNum; i++)
+	{
+		CookingThread[i];
+	}
 
 	while (true)
 	{
@@ -51,11 +47,16 @@ void KYRamyeon::OrderSetting(int _GasRangeNum, int _RamenNum)
 	GasRangeNum = _GasRangeNum;
 	RamenNum = _RamenNum;
 
+	int DividedWorkNum = static_cast<int>(RamenNum / GasRangeNum);
+
 	for (int i = 0; i < _GasRangeNum; i++)
 	{
-		//CookingThread[i] = [this]()
-		//	{
-		//		int a = 0;
-		//	};
+		CookingThread.push_back(std::thread(std::bind([this, DividedWorkNum]()
+			{
+				for (int i = 0; i < DividedWorkNum; i++)
+				{
+					++CookingCount;
+				}
+			})));
 	}
 }
