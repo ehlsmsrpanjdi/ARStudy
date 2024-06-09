@@ -10,4 +10,12 @@ KYRamyeon::~KYRamyeon()
 {
 }
 
+void KYRamyeon::CookingStart()
+{
 
+}
+
+void KYRamyeon::OrderSetting(int _GasRangeNum, int _RamenNum)
+{
+
+}

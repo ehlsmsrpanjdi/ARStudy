@@ -17,6 +17,12 @@ int main()
 	SMRM RM;
 	RM.Count(4, 1000000);
 	RM.Start();
+
+	{
+		KYRamyeon KYRMStore;
+		KYRMStore.OrderSetting(4, 100000);
+		KYRMStore.CookingStart();
+	}
 }
 
 /*
