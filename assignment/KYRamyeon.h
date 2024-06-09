@@ -12,17 +12,10 @@ public:
 	KYRamyeon();
 	~KYRamyeon();
 
-	//// delete Function
-	//KYRamyeon(const KYRamyeon& _Other) = delete;
-	//KYRamyeon(KYRamyeon&& _Other) noexcept = delete;
-	//KYRamyeon& operator=(const KYRamyeon& _Other) = delete;
-	//KYRamyeon& operator=(KYRamyeon&& _Other) noexcept = delete;
-
 	void CookingStart();
+	void OriginCookingStart();
 	void OrderSetting(int _GasRangeNum, int _RamenNum);
-
-	void TestFunction();
-
+	
 protected:
 
 private:

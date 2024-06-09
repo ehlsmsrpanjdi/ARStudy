@@ -18,6 +18,28 @@ KYRamyeon::~KYRamyeon()
 	}
 }
 
+void KYRamyeon::OriginCookingStart()
+{
+	if (-1 == GasRangeNum || -1 == RamenNum)
+	{
+		MsgBoxAssert("주문 세팅값을 정상적으로 지정하지 않았습니다. 확인해주세요.");
+		return;
+	}
+
+	std::cout << "조리 시작" << std::endl;
+
+	while (true)
+	{
+		if (RamenNum <= CookingCount)
+		{
+			break;
+		}
+		++CookingCount;
+	}
+
+	std::cout << "조리 완료" << std::endl;
+}
+
 void KYRamyeon::CookingStart()
 {
 	if (-1 == GasRangeNum || -1 == RamenNum)
@@ -25,6 +47,8 @@ void KYRamyeon::CookingStart()
 		MsgBoxAssert("주문 세팅값을 정상적으로 지정하지 않았습니다. 확인해주세요.");
 		return;
 	}
+
+	std::cout << "조리 시작" << std::endl;
 
 	for (int i = 0; i < GasRangeNum; i++)
 	{

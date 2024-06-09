@@ -19,9 +19,23 @@ int main()
 	RM.Start();
 
 	{
-		KYRamyeon KYRMStore;
-		KYRMStore.OrderSetting(4, 100000);
-		KYRMStore.CookingStart();
+		std::cout << "경윤 라면가게 오픈" << std::endl;
+
+		{
+			TimeTest("KYRMThread");
+			KYRamyeon KYRMStore;
+			KYRMStore.OrderSetting(4, 100000);
+			KYRMStore.CookingStart();
+		}
+
+		{
+			TimeTest("KYRMOrigin");
+			KYRamyeon KYRMStore;
+			KYRMStore.OrderSetting(4, 100000);
+			KYRMStore.OriginCookingStart();
+		}
+
+		std::cout << "준비된 체력이 소진되어 마감합니다..." << std::endl;
 	}
 }
 
