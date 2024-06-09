@@ -20,6 +20,7 @@ public:
 protected:
 
 private:
-
+	int GasRangeNum = -1;
+	int RamenNum = -1;
 };
 
