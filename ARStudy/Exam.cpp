@@ -37,6 +37,13 @@ int main()
 
 		std::cout << "준비된 체력이 소진되어 마감합니다..." << std::endl;
 	}
+
+	{
+		ksw::RamyeonStore RamyeonStore(4, 100000);
+		RamyeonStore.BeforeInfo();
+		RamyeonStore.Cooking();
+		RamyeonStore.AfterInfo();
+	}
 }
 
 /*

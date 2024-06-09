@@ -45,6 +45,7 @@ namespace ksw
 
 	void RamyeonStore::BeforeInfo()
 	{
+		std::cout << "\n** SW_Ramyeon **" << std::endl;
 		std::cout << "영업 전 라면 수 : " << RamyeonCount << std::endl;
 		std::cout << "영업 전 판매 수 : " << SellRamyeonCount << std::endl;
 		std::cout << std::endl;
