@@ -204,6 +204,9 @@
     <ClInclude Include="SWRamyeon.h">
       <Filter>Ramyeon\SW</Filter>
     </ClInclude>
+    <ClInclude Include="JWRamyeon.h">
+      <Filter>Ramyeon\JW</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -241,6 +244,9 @@
     </ClCompile>
     <ClCompile Include="SWRamyeon.cpp">
       <Filter>Ramyeon\SW</Filter>
+    </ClCompile>
+    <ClCompile Include="JWRamyeon.cpp">
+      <Filter>Ramyeon\JW</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

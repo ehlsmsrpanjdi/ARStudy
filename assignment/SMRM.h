@@ -17,6 +17,7 @@ public:
 			else {
 				--RamenCount;
 				++TotalCount;
+				std::cout << "RamenCount" << RamenCount << std::endl;
 			}
 		}
 	}

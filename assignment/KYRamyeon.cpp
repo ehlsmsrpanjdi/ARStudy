@@ -57,7 +57,7 @@ void KYRamyeon::CookingStart()
 
 	for (int i = 0; i < GasRangeNum; i++)
 	{
-		CookingThread[i];
+		//CookingThread[i];
 	}
 
 	while (true)

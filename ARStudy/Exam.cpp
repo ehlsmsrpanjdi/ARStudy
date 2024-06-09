@@ -1,11 +1,16 @@
 #include "PreCompile.h"
 #include "assignment/JWQueue.h"
 #include "assignment/YDUser.h"
-#include <assignment/SJRamyeon.h>
+
 
 int main()
 {
 	LeakCheck;
+
+	{
+		JWRamyeon Test;
+		Test.Open();
+	}
 
 	{
 		lsj::Store Store(4, 100000);
@@ -14,9 +19,11 @@ int main()
 		std::cout << "요리 후:" << Store.GetCookedCount() << std::endl;
 	}
 
-	SMRM RM;
-	RM.Count(4, 1000000);
-	RM.Start();
+	{
+		SMRM RM;
+		RM.Count(4, 1000000);
+		RM.Start();
+	}
 
 	{
 		std::cout << "경윤 라면가게 오픈" << std::endl;
@@ -43,7 +50,7 @@ int main()
 		RamyeonStore.BeforeInfo();
 		RamyeonStore.Cooking();
 		RamyeonStore.AfterInfo();
-	}
+	
 }
 
 /*
