@@ -22,16 +22,16 @@ int main()
 		std::cout << "°æÀ± ¶ó¸é°¡°Ô ¿ÀÇÂ" << std::endl;
 
 		{
-			TimeTest("KYRMThread");
 			KYRamyeon KYRMStore;
 			KYRMStore.OrderSetting(4, 100000);
+			TimeTest("KYRMThread");
 			KYRMStore.CookingStart();
 		}
 
 		{
-			TimeTest("KYRMOrigin");
 			KYRamyeon KYRMStore;
 			KYRMStore.OrderSetting(4, 100000);
+			TimeTest("KYRMOrigin");
 			KYRMStore.OriginCookingStart();
 		}
 
