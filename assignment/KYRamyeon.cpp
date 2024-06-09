@@ -9,6 +9,11 @@ KYRamyeon::KYRamyeon()
 
 KYRamyeon::~KYRamyeon()
 {
+	if (false == IsThreadOn)
+	{
+		return;
+	}
+
 	for (int i = 0; i < GasRangeNum; i++)
 	{
 		if (true == CookingThread[i].joinable())
@@ -66,10 +71,16 @@ void KYRamyeon::CookingStart()
 	std::cout << "조리 완료" << std::endl;
 }
 
-void KYRamyeon::OrderSetting(int _GasRangeNum, int _RamenNum)
+void KYRamyeon::OrderSetting(int _GasRangeNum, int _RamenNum, bool _IsThreadOn)
 {
 	GasRangeNum = _GasRangeNum;
 	RamenNum = _RamenNum;
+	IsThreadOn = _IsThreadOn;
+
+	if (false == IsThreadOn)
+	{
+		return;
+	}
 
 	int DividedWorkNum = static_cast<int>(RamenNum / GasRangeNum);
 
