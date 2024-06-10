@@ -9,6 +9,10 @@ YDRamyeon::YDRamyeon()
 
 YDRamyeon::~YDRamyeon()
 {
+	for (int i = 0; i < 4; i++)
+	{
+		delete Threads[i];
+	}
 }
 
 void Cook(int& count, std::mutex& m)

@@ -7,48 +7,48 @@ int main()
 {
 	LeakCheck;
 
-	{
-		JWRamyeon Test;
-		Test.Open();
-	}
+	//{
+	//	JWRamyeon Test;
+	//	Test.Open();
+	//}
 
-	{
-		lsj::Store Store(4, 100000);
-		std::cout << "요리 전:" << Store.GetCookedCount() << std::endl;
-		Store.Cook();
-		std::cout << "요리 후:" << Store.GetCookedCount() << std::endl;
-	}
+	//{
+	//	lsj::Store Store(4, 100000);
+	//	std::cout << "요리 전:" << Store.GetCookedCount() << std::endl;
+	//	Store.Cook();
+	//	std::cout << "요리 후:" << Store.GetCookedCount() << std::endl;
+	//}
 
-	{
-		SMRM RM;
-		RM.Count(4, 1000000);
-		RM.Start();
-	}
+	//{
+	//	SMRM RM;
+	//	RM.Count(4, 1000000);
+	//	RM.Start();
+	//}
 
-	{
-		std::cout << "경윤 라면가게 오픈" << std::endl;
+	//{
+	//	std::cout << "경윤 라면가게 오픈" << std::endl;
 
-		{
-			KYRamyeon KYRMStore;
-			KYRMStore.OrderSetting(4, 100000);
-			TimeTest("KYRMThread");
-			KYRMStore.CookingStart();
-		}
+	//	{
+	//		KYRamyeon KYRMStore;
+	//		KYRMStore.OrderSetting(4, 100000);
+	//		TimeTest("KYRMThread");
+	//		KYRMStore.CookingStart();
+	//	}
 
-		{
-			KYRamyeon KYRMStore;
-			KYRMStore.OrderSetting(4, 100000, false);
-			TimeTest("KYRMOrigin");
-			KYRMStore.OriginCookingStart();
-		}
+	//	{
+	//		KYRamyeon KYRMStore;
+	//		KYRMStore.OrderSetting(4, 100000, false);
+	//		TimeTest("KYRMOrigin");
+	//		KYRMStore.OriginCookingStart();
+	//	}
 
-		std::cout << "준비된 체력이 소진되어 마감합니다..." << std::endl;
-	}
+	//	std::cout << "준비된 체력이 소진되어 마감합니다..." << std::endl;
+	//}
 
-	{
-		ksw::RamyeonStore RamyeonStore(4, 10000000);
-		RamyeonStore.Cooking(ksw::ECookType::Atomic);
-	}
+	//{
+	//	ksw::RamyeonStore RamyeonStore(4, 10000000);
+	//	RamyeonStore.Cooking(ksw::ECookType::Atomic);
+	//}
 
 	{
 		YDRamyeon YD = YDRamyeon();
