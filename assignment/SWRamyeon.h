@@ -2,6 +2,12 @@
 
 namespace ksw
 {
+	enum class ECookType
+	{
+		Mutex,
+		Atomic
+	};
+
 	class RamyeonStore
 	{
 	public:
@@ -16,15 +22,18 @@ namespace ksw
 		RamyeonStore& operator=(RamyeonStore&& _Other) noexcept = delete;
 
 	public:
+		void Cooking(ECookType _CookType);
+	
+	private:
 		void BeforeInfo();
-		void AfterInfo();
+		void AfterInfo(ECookType _CookType);
 
-		void Cooking();
 	
 	private:
 		size_t StoveCount = 0;
 		size_t RamyeonCount = 0;
 		size_t SellRamyeonCount = 0;
+		std::atomic<size_t> AtomicSellRamyeonCount = 0;
 
 		std::vector<std::thread*> Stove;
 	};

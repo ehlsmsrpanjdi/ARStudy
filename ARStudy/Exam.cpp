@@ -47,10 +47,8 @@ int main()
 
 	{
 		ksw::RamyeonStore RamyeonStore(4, 10000000);
-		RamyeonStore.BeforeInfo();
-		RamyeonStore.Cooking();
-		RamyeonStore.AfterInfo();
-	
+		RamyeonStore.Cooking(ksw::ECookType::Atomic);
+	}
 }
 
 /*

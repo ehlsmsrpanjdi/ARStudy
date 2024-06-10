@@ -12,16 +12,28 @@ namespace ksw
 	{
 	}
 
-	void RamyeonStore::Cooking()
+	void RamyeonStore::Cooking(ECookType _CookType)
 	{
-		std::function MakeRamyeon = [&](size_t _JobCount, std::mutex& _Mutex)
+		BeforeInfo();
+
+		std::function MakeRamyeon = [&](size_t _JobCount, std::mutex& _Mutex, ECookType _CookType)
 			{ 
 				std::thread::id ID = std::this_thread::get_id();
 				for (size_t i = 0; i < _JobCount; i++)
 				{
-					std::lock_guard<std::mutex> lock(_Mutex);
-					++SellRamyeonCount;
-
+					switch (_CookType)
+					{
+					case ksw::ECookType::Mutex:
+					{
+						std::lock_guard<std::mutex> lock(_Mutex);
+						++SellRamyeonCount;
+					}
+						break;
+					case ksw::ECookType::Atomic:
+						++AtomicSellRamyeonCount;
+						break;
+					}
+					
 					//std::cout << SellRamyeonCount << std::endl;
 					//printf_s("Thread %x : %lu \n", ID, SellRamyeonCount);
 				}
@@ -33,7 +45,7 @@ namespace ksw
 		Stove.reserve(StoveCount);
 		for (size_t i = 0; i < StoveCount; i++)
 		{
-			std::thread* NewStove = new std::thread(MakeRamyeon, JobCount, std::ref(Mutex));
+			std::thread* NewStove = new std::thread(MakeRamyeon, JobCount, std::ref(Mutex), _CookType);
 			Stove.push_back(NewStove);
 		}
 
@@ -44,6 +56,8 @@ namespace ksw
 		}
 
 		Stove.clear();
+
+		AfterInfo(_CookType);
 	}
 
 	void RamyeonStore::BeforeInfo()
@@ -53,10 +67,19 @@ namespace ksw
 		std::cout << std::endl;
 	}
 
-	void RamyeonStore::AfterInfo()
+	void RamyeonStore::AfterInfo(ECookType _CookType)
 	{
-		std::cout << "영업 후 판매 수 : " << SellRamyeonCount << std::endl;
-		std::cout << "오차 : " << RamyeonCount - SellRamyeonCount << std::endl;
+		switch (_CookType)
+		{
+		case ksw::ECookType::Mutex:
+			std::cout << "영업 후 판매 수 : " << SellRamyeonCount << std::endl;
+			std::cout << "오차 : " << RamyeonCount - SellRamyeonCount << std::endl;
+			break;
+		case ksw::ECookType::Atomic:
+			std::cout << "영업 후 판매 수 : " << AtomicSellRamyeonCount << std::endl;
+			std::cout << "오차 : " << RamyeonCount - AtomicSellRamyeonCount << std::endl;
+			break;
+		}
 		std::cout << std::endl;
 	}
 }
