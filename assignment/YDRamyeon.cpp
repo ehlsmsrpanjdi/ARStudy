@@ -3,6 +3,7 @@
 #include <iostream>
 #include <mutex>
 
+
 YDRamyeon::YDRamyeon()
 {
 }
@@ -15,14 +16,17 @@ YDRamyeon::~YDRamyeon()
 	}
 }
 
-void Cook(int& count, std::mutex& m)
+void Cook(int index, int& count, std::mutex& m)
 {
-	m.lock();
-	while (count < 100000)
+	while (count < 1000000)
 	{
-		++count;
+		m.lock();
+		if(count < 1000000)
+		{
+			std::cout << index << " : " << ++count << std::endl;
+		}
+		m.unlock();
 	}
-	m.unlock();
 }
 
 void YDRamyeon::Ramyeon()
@@ -34,7 +38,7 @@ void YDRamyeon::Ramyeon()
 
 	for (int i = 0; i < 4; i++)
 	{
-		Threads[i] = new std::thread(Cook, std::ref(count), std::ref(m));
+		Threads[i] = new std::thread(Cook,i, std::ref(count), std::ref(m));
 	}
 
 	bool Done = false;
