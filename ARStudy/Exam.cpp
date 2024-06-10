@@ -1,6 +1,6 @@
 #include "PreCompile.h"
 #include "assignment/JWQueue.h"
-#include "assignment/YDUser.h"
+
 
 
 int main()
@@ -48,6 +48,11 @@ int main()
 	{
 		ksw::RamyeonStore RamyeonStore(4, 10000000);
 		RamyeonStore.Cooking(ksw::ECookType::Atomic);
+	}
+
+	{
+		YDRamyeon YD = YDRamyeon();
+		YD.Ramyeon();
 	}
 }
 
