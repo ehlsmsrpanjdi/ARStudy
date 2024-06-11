@@ -118,6 +118,39 @@
     <Filter Include="Ramyeon\YD">
       <UniqueIdentifier>{551f00eb-5fa4-4943-ac57-9a1ae21796a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaekJoon">
+      <UniqueIdentifier>{b8689082-2330-414f-8124-bf39463f4347}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector">
+      <UniqueIdentifier>{ff081aaa-2139-4fc6-be45-d304b903869a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\JW">
+      <UniqueIdentifier>{1d414ff5-00d4-450c-8908-8e7597300165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\YD">
+      <UniqueIdentifier>{7bbca7d7-fbee-4944-ae39-e465c7a73af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\SM">
+      <UniqueIdentifier>{567dc1a8-2a2a-4aa9-8642-5adb352d6a60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\KT">
+      <UniqueIdentifier>{ba52da61-e41f-4d50-bb78-ac3ff507b156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\SJ">
+      <UniqueIdentifier>{4e8ed47b-4035-4a03-a801-507a69e70df7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\TH">
+      <UniqueIdentifier>{f713b395-e447-46a2-ac79-0b4c6853fb62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\KY">
+      <UniqueIdentifier>{60e79f60-f3fe-4fc4-b229-62f7b338d962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\JY">
+      <UniqueIdentifier>{5b50b96a-c9b7-46bc-ad4b-69347c9f05c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Vector\SW">
+      <UniqueIdentifier>{fb169344-0f5c-4df0-b17b-2bd71469f91c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -210,6 +243,9 @@
     <ClInclude Include="YDRamyeon.h">
       <Filter>Ramyeon\YD</Filter>
     </ClInclude>
+    <ClInclude Include="JWBJVector.h">
+      <Filter>BaekJoon\Vector\JW</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -253,6 +289,9 @@
     </ClCompile>
     <ClCompile Include="YDRamyeon.cpp">
       <Filter>Ramyeon\YD</Filter>
+    </ClCompile>
+    <ClCompile Include="JWBJVector.cpp">
+      <Filter>BaekJoon\Vector\JW</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

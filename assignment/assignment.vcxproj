@@ -160,6 +160,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="JWBJVector.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="JWRamyeon.h">
       <SubType>
       </SubType>
@@ -258,6 +262,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="JWBJVector.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="JWRamyeon.cpp">
       <SubType>
       </SubType>
