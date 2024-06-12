@@ -28,3 +28,5 @@
 #include <assignment/SJRamyeon.h>
 #include <assignment/JWRamyeon.h>
 #include <assignment/YDRamyeon.h>
+
+#include <assignment/SJBJVector.h>
