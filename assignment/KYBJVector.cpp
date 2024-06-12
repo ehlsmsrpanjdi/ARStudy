@@ -75,3 +75,53 @@ void KYBJVector::BJ1475()
 
 	std::cout << MaxNumber;;
 }
+
+//#include <iostream>
+//#include <string>
+//#include <vector>
+
+void KYBJVector::BJ1919()
+{
+	std::string LeftStr = std::string();
+	std::string RightStr = std::string();
+
+	std::cin >> LeftStr;
+	std::cin >> RightStr;
+
+	std::vector<int> LeftStrVec = std::vector<int>();
+	std::vector<int> RightStrVec = std::vector<int>();
+	int StrVecSize = 'z' - 'a' + 1;
+	int RemoveCharNum = 0;
+
+	LeftStrVec.resize(StrVecSize);
+	RightStrVec.resize(StrVecSize);
+
+	for (size_t i = 0; i < LeftStr.size(); i++)
+	{
+		++LeftStrVec[LeftStr[i] - 'a'];
+	}
+
+	for (size_t i = 0; i < RightStr.size(); i++)
+	{
+		++RightStrVec[RightStr[i] - 'a'];
+	}
+
+
+	for (int i = 0; i < StrVecSize; i++)
+	{
+		while (LeftStrVec[i] != RightStrVec[i])
+		{
+			if (LeftStrVec[i] < RightStrVec[i])
+			{
+				--RightStrVec[i];
+			}
+			else if (LeftStrVec[i] > RightStrVec[i])
+			{
+				--LeftStrVec[i];
+			}
+			++RemoveCharNum;
+		}
+	}
+
+	std::cout << RemoveCharNum;
+}
