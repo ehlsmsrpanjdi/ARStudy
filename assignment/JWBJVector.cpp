@@ -274,4 +274,43 @@ void JWBJVector::BJ1919()
 
 void JWBJVector::BJ3273TwoPointer()
 {
+	int n = 0;
+	std::cin >> n;
+	std::vector<int> Numbers;
+	Numbers.resize(n);
+	int Insert = 0;
+	for (int i = 0; i < n; i++)
+	{
+		std::cin >> Insert;
+		Numbers[i] = Insert;
+	}
+	int CheckNum = 0;
+	std::cin >> CheckNum;
+
+	std::sort(Numbers.begin(), Numbers.end());
+
+	int Result = 0;
+	int Left = 0;
+	int Right = Numbers.size() - 1;
+	while (Left < Right)
+	{
+		int LeftValue = Numbers[Left];
+		int RightValue = Numbers[Right];
+		int Check = LeftValue + RightValue;
+		if (CheckNum == Check)
+		{
+			++Result;
+			Left++;
+			Right--;
+		}
+		else if (CheckNum <= Check)
+		{
+			Right--;
+		}
+		else
+		{
+			Left++;
+		}
+	}
+	std::cout << Result;
 }
