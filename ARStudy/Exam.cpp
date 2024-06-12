@@ -50,9 +50,21 @@ int main()
 	//	RamyeonStore.Cooking(ksw::ECookType::Atomic);
 	//}
 
+	//{
+	//	YDRamyeon YD = YDRamyeon();
+	//	YD.Ramyeon();
+	//}
+
 	{
-		YDRamyeon YD = YDRamyeon();
-		YD.Ramyeon();
+		SJBJVector Sol;
+		//Sol.BJ10808();
+		//Sol.BJ2577();
+		//Sol.BJ1475();
+		//Sol.BJ3273();
+		//Sol.BJ10807();
+		//Sol.BJ13300();
+		//Sol.BJ11328();
+		//Sol.BJ1919();
 	}
 }
 
