@@ -125,3 +125,41 @@ void KYBJVector::BJ1919()
 
 	std::cout << RemoveCharNum;
 }
+
+//#include <iostream>
+//#include <string>
+//#include <vector>
+
+void KYBJVector::BJ2577()
+{
+	std::vector<int> Numbers = std::vector<int>();
+	int InputVal = 0;
+	int MulResultVal = 1;
+
+	for (int i = 0; i < 3; i++)
+	{
+		std::cin >> InputVal;
+		Numbers.push_back(InputVal);
+	}
+
+	for (size_t i = 0; i < Numbers.size(); i++)
+	{
+		MulResultVal *= Numbers[i];
+	}
+
+	std::string ResultStr = std::string();
+	ResultStr = std::to_string(MulResultVal);
+
+	std::vector<int> NumVals = std::vector<int>();
+	NumVals.resize(10);
+
+	for (size_t i = 0; i < ResultStr.size(); i++)
+	{
+		++NumVals[ResultStr[i] - '0'];
+	}
+
+	for (int i = 0; i < NumVals.size(); i++)
+	{
+		std::cout << NumVals[i] << std::endl;
+	}
+}
