@@ -120,6 +120,44 @@ public:
 		}
 		std::cout << Result;
 	}
+	void BJ3273_2()
+	{
+		// OutOfRange
+		int n = 0;
+		std::cin >> n;
+		std::vector<int> All;
+		All.resize(1000001);
+		std::vector<int> Numbers;
+		Numbers.resize(n);
+		int Insert = 0;
+		for (int i = 0; i < n; i++)
+		{
+			std::cin >> Insert;
+			Numbers[i] = Insert;
+			All[Insert] = 1;
+		}
+		int CheckNum = 0;
+		std::cin >> CheckNum;
+
+		std::sort(Numbers.begin(), Numbers.end());
+
+		int Count = 0;
+		for (int i = 0; i < Numbers.size(); i++)
+		{
+			int Index = CheckNum - Numbers[i];
+			if (Index >= 0)
+			{
+				if (1 == All[Index])
+				{
+					if (Numbers[i] < Index)
+					{
+						Count++;
+					}
+				}
+			}
+		}
+		std::cout << Count;
+	}
 	void BJ10807()
 	{
 		// ¿Ï
@@ -193,7 +231,34 @@ public:
 	}
 	void BJ11328()
 	{
+		// ¿Ï
+		int N;
+		std::cin >> N;
+		std::string Left;
+		std::string Right;
 
+		for (int i = 0; i < N; i++)
+		{
+			std::cin >> Left;
+			std::cin >> Right;
+
+			if (Left.size() != Right.size())
+			{
+				std::cout << "Impossible" << std::endl;
+				continue;
+			}
+
+			std::sort(Left.begin(), Left.end());
+			std::sort(Right.begin(), Right.end());
+
+			if (false == (Left == Right))
+			{
+				std::cout << "Impossible" << std::endl;
+				continue;
+			}
+
+			std::cout << "Possible" << std::endl;
+		}
 	}
 	void BJ1919()
 	{
