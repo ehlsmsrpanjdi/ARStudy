@@ -32,3 +32,46 @@ void KYBJVector::BJ10808()
 		std::cout << " ";
 	}
 }
+
+//#include <iostream>
+//#include <string>
+//#include <cmath>
+//#include <vector>
+
+void KYBJVector::BJ1475()
+{
+	std::vector<int> EachNumbers = std::vector<int>();
+	EachNumbers.resize(10);
+
+	int MaxNumber = 0;
+
+	std::string RoomNumber = std::string();
+	std::cin >> RoomNumber;
+
+	for (size_t i = 0; i < RoomNumber.size(); i++)
+	{
+		++EachNumbers[RoomNumber[i] - static_cast<int>('0')];
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (6 == i || 9 == i)
+		{
+			float CeilNum = (static_cast<float>(EachNumbers[6]) + static_cast<float>(EachNumbers[9])) / 2.0f;
+			int DuplicateNum = static_cast<int>(ceil(CeilNum));
+
+			if (DuplicateNum > MaxNumber)
+			{
+				MaxNumber = DuplicateNum;
+			}
+			continue;
+		}
+
+		if (EachNumbers[i] > MaxNumber)
+		{
+			MaxNumber = EachNumbers[i];
+		}
+	}
+
+	std::cout << MaxNumber;;
+}

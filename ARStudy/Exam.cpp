@@ -70,6 +70,7 @@ int main()
 	{
 		KYBJVector KYBJ;
 		//KYBJ.BJ10808();
+		//KYBJ.BJ1475();
 	}
 }
 

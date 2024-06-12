@@ -9,6 +9,7 @@ public:
 	~KYBJVector();
 
 	void BJ10808();
+	void BJ1475();
 
 protected:
 
