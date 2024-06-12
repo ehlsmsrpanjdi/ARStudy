@@ -17,9 +17,13 @@ namespace ksw
 
 	public:
 		static void Problem_1475();
+		static void Problem_1919();
 		static void Problem_2577();
 		static void Problem_3273();
+		static void Problem_10807();
 		static void Problem_10808();
+		static void Problem_11328();
+		static void Problem_13300();
 
 	};
 }
