@@ -12,6 +12,7 @@ public:
 	void BJ1475();
 	void BJ1919();
 	void BJ2577();
+	void BJ10807();
 
 protected:
 
