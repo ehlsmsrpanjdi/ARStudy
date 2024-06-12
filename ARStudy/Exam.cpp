@@ -66,6 +66,11 @@ int main()
 		//Sol.BJ11328();
 		//Sol.BJ1919();
 	}
+
+	{
+		KYBJVector KYBJ;
+		//KYBJ.BJ10808();
+	}
 }
 
 /*
