@@ -178,6 +178,10 @@
     </ClInclude>
     <ClInclude Include="SMCal.h" />
     <ClInclude Include="SMRM.h" />
+    <ClInclude Include="SWBJVector.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="SWCalculator.h">
       <SubType>
       </SubType>
@@ -279,6 +283,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="SMCal.cpp" />
+    <ClCompile Include="SWBJVector.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="SWCalculator.cpp">
       <SubType>
       </SubType>
