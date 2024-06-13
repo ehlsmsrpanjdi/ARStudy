@@ -164,8 +164,8 @@ void KYBJVector::BJ2577()
 	}
 }
 
-#include <iostream>
-#include <vector>
+//#include <iostream>
+//#include <vector>
 
 void KYBJVector::BJ10807()
 {
@@ -194,4 +194,54 @@ void KYBJVector::BJ10807()
 	}
 
 	std::cout << FindNumCount;
+}
+
+#include <iostream>
+#include <vector>
+
+void KYBJVector::BJ13300()
+{
+	// 조건
+	// -	남녀 별로
+	// -	같은 학년만 배정
+	// -	방안에 최대 인원수 제한
+	// 
+	// 출력 : 필요한 최소 방의 수
+
+	int NumOfStudents = -1;
+	int LimitNum = -1;
+	int Gender = -1;
+	int Grade = -1;
+
+	std::vector<int> GirlsRoom = std::vector<int>();
+	std::vector<int> BoysRoom = std::vector<int>();
+	GirlsRoom.resize(6);
+	BoysRoom.resize(6);
+
+	std::cin >> NumOfStudents;
+	std::cin >> LimitNum;
+
+
+	for (int i = 0; i < NumOfStudents; i++)
+	{
+		std::cin >> Gender;
+		
+		std::cin >> Grade;
+
+		switch (Gender)
+		{
+		case 0:
+		{
+			++GirlsRoom[Grade - 1];
+			break;
+		}
+		case 1:
+		{
+			++BoysRoom[Grade - 1];
+			break;
+		}
+		default:
+			break;
+		}
+	}
 }
