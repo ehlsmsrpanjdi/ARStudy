@@ -170,24 +170,20 @@ void KYBJVector::BJ2577()
 void KYBJVector::BJ10807()
 {
 	int NumSize = -1;
-	std::vector<int> NumbersVec = std::vector<int>();
-	std::string InputStr = std::string();
+	int Value = -1;
 	int FindNumVal = -1;
 	int FindNumCount = 0;
+	std::vector<int> NumbersVec = std::vector<int>();
 
 	std::cin >> NumSize;
 
-	std::cin >> InputStr;
-	
-	std::cin >> FindNumVal;
-
-	for (size_t i = 0; i < InputStr.size(); i++)
+	for (int i = 0; i < NumSize; i++)
 	{
-		if ('0' <= InputStr[i] && '9' >= InputStr[i])
-		{
-			NumbersVec.push_back(InputStr[i] - '0');
-		}
+		std::cin >> Value;
+		NumbersVec.push_back(Value);
 	}
+
+	std::cin >> FindNumVal;
 
 	for (size_t i = 0; i < NumbersVec.size(); i++)
 	{
