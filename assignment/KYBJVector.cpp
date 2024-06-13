@@ -298,3 +298,73 @@ void KYBJVector::BJ13300()
 
 	std::cout << NumberOfRoom;
 }
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+void KYBJVector::BJ11328()
+{
+	// strfry : 입력된 문자열을 재배열하는 함수
+	// (즉, Src 문자열과 Dest문자열의 문자열을 각각 벡터에 집어넣고 각 배열 요소가 맞는지를 확인하면 될 것
+
+	int CaseNum = -1;
+	int CharNum = static_cast<int>('z' - 'a' + 1);
+	std::vector<std::vector<int>> CheckSrcStrings = std::vector<std::vector<int>>();
+	std::vector<std::vector<int>> CheckDstStrings = std::vector<std::vector<int>>();
+	std::string SrcString = std::string();
+	std::string DstString = std::string();
+
+
+	std::cin >> CaseNum;
+	
+
+
+	CheckSrcStrings.resize(CaseNum);
+	CheckDstStrings.resize(CaseNum);
+
+	for (int i = 0; i < CaseNum; i++)
+	{
+		std::cin >> SrcString;
+		std::cin >> DstString;
+
+		CheckSrcStrings[i].resize(CharNum);
+		CheckDstStrings[i].resize(CharNum);
+
+		for (size_t j = 0; j < SrcString.size(); j++)
+		{
+			++CheckSrcStrings[i][SrcString[j] - 'a'];
+		}
+
+		for (size_t j = 0; j < DstString.size(); j++)
+		{
+			++CheckDstStrings[i][DstString[j] - 'a'];
+		}
+	}
+
+	for (int i = 0; i < CaseNum; i++)
+	{
+		int j = 0;
+
+		while (true)
+		{
+			if (j > static_cast<int>(CheckSrcStrings.size()))
+			{
+				break;
+			}
+
+			if (CheckSrcStrings[i][j] != CheckDstStrings[i][j])
+			{
+				std::cout << "Impossible" << std::endl;
+				break;
+			}
+			++j;
+		}
+
+		if (j > static_cast<int>(CheckSrcStrings.size()))
+		{
+			std::cout << "Possible" << std::endl;
+		}
+	}
+}
+
