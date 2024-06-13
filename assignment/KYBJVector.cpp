@@ -196,8 +196,8 @@ void KYBJVector::BJ10807()
 	std::cout << FindNumCount;
 }
 
-#include <iostream>
-#include <vector>
+//#include <iostream>
+//#include <vector>
 
 void KYBJVector::BJ13300()
 {
@@ -212,6 +212,7 @@ void KYBJVector::BJ13300()
 	int LimitNum = -1;
 	int Gender = -1;
 	int Grade = -1;
+	int NumberOfRoom = 0;
 
 	std::vector<int> GirlsRoom = std::vector<int>();
 	std::vector<int> BoysRoom = std::vector<int>();
@@ -244,4 +245,56 @@ void KYBJVector::BJ13300()
 			break;
 		}
 	}
+
+	// 여자방
+	for (int i = 0; i < 6; i++)
+	{
+		// 여자방 수 계산
+		{
+			// 방제한 수보다 학생 수가 더 많을 때
+			while (true)
+			{
+				if (LimitNum >= GirlsRoom[i])
+				{
+					break;
+				}
+
+				// 2을 입력받았으면 0, 1, 2까지는 ㄱㅊ 3명부터가 문제
+				if (LimitNum < GirlsRoom[i])
+				{
+					GirlsRoom[i] -= LimitNum;
+					++NumberOfRoom;
+				}
+			}
+
+			if (0 != GirlsRoom[i])
+			{
+				++NumberOfRoom;
+			}
+		}
+
+		// 남자방 수 계산
+		{
+			while (true)
+			{
+				if (LimitNum >= BoysRoom[i])
+				{
+					break;
+				}
+
+				if (LimitNum < BoysRoom[i])
+				{
+					BoysRoom[i] -= LimitNum;
+					++NumberOfRoom;
+				}
+			}
+
+			if (0 != BoysRoom[i])
+			{
+				++NumberOfRoom;
+			}
+		}
+	}
+
+	std::cout << NumberOfRoom;
 }
