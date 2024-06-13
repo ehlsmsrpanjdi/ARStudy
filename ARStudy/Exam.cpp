@@ -75,6 +75,12 @@ int main()
 		//KYBJ.BJ2577();
 		//KYBJ.BJ10807();
 	}
+
+	{
+		YDBJVector yndoo;
+		//yndoo.BJ10808();
+		//yndoo.BJ2577();
+	}
 }
 
 /*

@@ -255,6 +255,9 @@
     <ClInclude Include="KYBJVector.h">
       <Filter>BaekJoon\Vector\KY</Filter>
     </ClInclude>
+    <ClInclude Include="YDBJVector.h">
+      <Filter>BaekJoon\Vector\YD</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -310,6 +313,9 @@
     </ClCompile>
     <ClCompile Include="KYBJVector.cpp">
       <Filter>BaekJoon\Vector\KY</Filter>
+    </ClCompile>
+    <ClCompile Include="YDBJVector.cpp">
+      <Filter>BaekJoon\Vector\YD</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -31,3 +31,4 @@
 
 #include <assignment/SJBJVector.h>
 #include <assignment/KYBJVector.h>
+#include <assignment/YDBJVector.h>
