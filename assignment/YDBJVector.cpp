@@ -3,6 +3,7 @@
 #include <vector>
 #include <set>
 #include <iostream>
+#include <map>
 
 YDBJVector::YDBJVector()
 {
@@ -135,4 +136,20 @@ void YDBJVector::BJ3273()
 	}
 
 	std::cout << count;
+}
+
+void YDBJVector::BJ10807()
+{
+	std::map<int, int> CountMap;
+	int N, v;
+	std::cin >> N;
+	while (N)
+	{
+		--N;
+		int tmp;
+		std::cin >> tmp;
+		++CountMap[tmp];
+	}
+	std::cin >> v;
+	std::cout << CountMap[v];
 }
