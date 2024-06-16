@@ -261,6 +261,9 @@
     <ClInclude Include="THBJVector.h">
       <Filter>BaekJoon\Vector\TH</Filter>
     </ClInclude>
+    <ClInclude Include="SMVec.h">
+      <Filter>BaekJoon\Vector\SM</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">

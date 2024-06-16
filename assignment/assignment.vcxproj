@@ -186,6 +186,7 @@
     </ClInclude>
     <ClInclude Include="SMCal.h" />
     <ClInclude Include="SMRM.h" />
+    <ClInclude Include="SMVec.h" />
     <ClInclude Include="SWBJVector.h">
       <SubType>
       </SubType>
