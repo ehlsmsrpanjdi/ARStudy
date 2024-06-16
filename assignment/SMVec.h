@@ -99,3 +99,18 @@ void SM3273() {
 	}
 	std::cout << Count << std::endl;
 }
+
+void SM10807() {
+	int num = 0;
+	int Size = 0;
+	std::cin >> Size;
+	std::vector<int> vec;
+	vec.resize(Size);
+	for (int i = 0; i < Size; ++i) {
+		std::cin >> num;
+		++vec[num];
+	}
+	std::cin >> num;
+
+	std::cout << vec[num] << std::endl;
+}
