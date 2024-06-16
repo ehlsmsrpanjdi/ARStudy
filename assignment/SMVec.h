@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 void SM10808() {
 	std::string name;
@@ -59,4 +60,42 @@ void SM1475() {
 	}
 
 	std::cout << num << std::endl;
+}
+
+void SM3273() {
+	std::ios_base::sync_with_stdio(false);
+	std::cin.tie(NULL);
+	std::cout.tie(NULL);
+
+	int num = 0;
+	int Size = 0;
+	int Count = 0;
+	int Start = 0;
+	int Index = 0;
+	std::cin >> num;
+	std::vector<int> vec;
+	vec.resize(num, 0);
+	for (int i = 0; i < num; ++i) {
+		std::cin >> vec[i];
+	}
+	std::cin >> Size;
+	std::sort(vec.begin(), vec.end());
+	while ((vec[num - 1] + vec[Start]) > Size) {
+		if (Index % 2) {
+			--num;
+			++Index;
+		}
+		else {
+			++Start;
+			++Index;
+		}
+	}
+	for (int i = Start; i < num; ++i) {
+		for (int j = i + 1; j < num; ++j) {
+			if ((vec[i] + vec[j]) == Size) {
+				++Count;
+			}
+		}
+	}
+	std::cout << Count << std::endl;
 }
