@@ -299,9 +299,9 @@ void KYBJVector::BJ13300()
 	std::cout << NumberOfRoom;
 }
 
-#include <iostream>
-#include <vector>
-#include <string>
+//#include <iostream>
+//#include <vector>
+//#include <string>
 
 void KYBJVector::BJ11328()
 {
@@ -368,3 +368,59 @@ void KYBJVector::BJ11328()
 	}
 }
 
+#include <iostream>
+#include <vector>
+
+void KYBJVector::BJ3273()
+{
+	// n개의 수 벡터에 저장
+	//  (1 <= Ai <= 1000000) 의 범위의 서로다른 Ai들 n개가 저장된다
+	// X를 입력 받으면 요소들 중 2개 합이 X가 되는 조합의 수를 찾을 것
+
+	// 입력
+	// 1. 수열 크기
+	// 2. 수열 요소들 입력
+	// 3. 더해서 X가 되는 조합
+		
+	int NumOfElements = -1;
+	int Element = 0;
+	std::vector<int> Elements = std::vector<int>();
+	int SumValue = -1;
+	int AvailableCalNum = 0;
+
+	std::cin >> NumOfElements;
+	Elements.reserve(NumOfElements);
+
+	for (int i = 0; i < NumOfElements; i++)
+	{
+		std::cin >> Element;
+
+		if (1 > Element || 1000000 < Element)
+		{
+			std::cout << "입력된 요소의 값이 지정된 범위(1 <= 입력 값 <= 1000000)를 벗어납니다." << std::endl;
+			return;
+		}
+
+		Elements.emplace_back(Element);
+	}
+
+	std::cin >> SumValue;
+	if (1 > SumValue || 2000000 < SumValue)
+	{
+		std::cout << "입력된 합의 값이 지정된 범위(1 <= 입력 값 <= 2000000)를 벗어납니다." << std::endl;
+		return;
+	}
+
+	for (size_t i = 0; i < Elements.size(); i++)
+	{
+		for (size_t j = i+1; j < Elements.size(); j++)
+		{
+			if (SumValue == Elements[i] + Elements[j])
+			{
+				++AvailableCalNum;
+			}
+		}
+	}
+
+	std::cout << AvailableCalNum;
+}
