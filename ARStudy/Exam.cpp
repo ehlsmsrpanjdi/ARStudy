@@ -83,6 +83,8 @@ int main()
 		YDBJVector yndoo;
 		//yndoo.BJ10808();
 		//yndoo.BJ2577();
+		//yndoo.BJ3273();
+		//yndoo.BJ1475();
 	}
 }
 
