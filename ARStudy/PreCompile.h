@@ -19,6 +19,7 @@
 #include <assignment/KYUser.h>
 #include <assignment/SWCalculator.h>
 #include <assignment/SMCal.h>
+#include "assignment/YDUser.h"
 
 
 #include <assignment/SMRM.h>
@@ -26,3 +27,8 @@
 #include <assignment/SWRamyeon.h>
 #include <assignment/SJRamyeon.h>
 #include <assignment/JWRamyeon.h>
+#include <assignment/YDRamyeon.h>
+
+#include <assignment/SJBJVector.h>
+#include <assignment/KYBJVector.h>
+#include <assignment/YDBJVector.h>

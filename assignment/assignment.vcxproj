@@ -160,11 +160,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="JWBJVector.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="JWRamyeon.h">
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="KYBJVector.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="KYRamyeon.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="SJBJVector.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -174,6 +186,11 @@
     </ClInclude>
     <ClInclude Include="SMCal.h" />
     <ClInclude Include="SMRM.h" />
+    <ClInclude Include="SMVec.h" />
+    <ClInclude Include="SWBJVector.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="SWCalculator.h">
       <SubType>
       </SubType>
@@ -231,8 +248,16 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="THBJVector.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="THQueue.h" />
     <ClInclude Include="USMList.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="YDBJVector.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -241,6 +266,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="YDQueue.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="YDRamyeon.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -254,11 +283,23 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="JWBJVector.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="JWRamyeon.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="KYBJVector.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="KYRamyeon.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="SJBJVector.cpp">
       <SubType>
       </SubType>
     </ClCompile>
@@ -267,6 +308,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="SMCal.cpp" />
+    <ClCompile Include="SWBJVector.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="SWCalculator.cpp">
       <SubType>
       </SubType>
@@ -300,7 +345,19 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="THBJVector.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="USMList.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="YDBJVector.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="YDRamyeon.cpp">
       <SubType>
       </SubType>
     </ClCompile>
