@@ -368,8 +368,9 @@ void KYBJVector::BJ11328()
 	}
 }
 
-#include <iostream>
-#include <vector>
+//#include <iostream>
+//#include <vector>
+//#include <algorithm>
 
 void KYBJVector::BJ3273()
 {		
@@ -389,53 +390,35 @@ void KYBJVector::BJ3273()
 		Elements.emplace_back(Element);
 	}
 
-	for (int j = 0; j < NumOfElements; ++j)
-	{
-		for (int i = 1; i < NumOfElements - j; ++i)
-		{
-			if (Elements[i] < Elements[i - 1])
-			{
-				int Temp = Elements[i - 1];
-				Elements[i - 1] = Elements[i];
-				Elements[i] = Temp;
-			}
-		}
-	}
+	std::sort(Elements.begin(), Elements.end());
 
 	std::cin >> SumValue;
 
-	for (int i = 0; i < NumOfElements; i++)
+	std::vector<int>::iterator StartIter = Elements.begin();
+	std::vector<int>::iterator EndIter = Elements.end();
+	--EndIter;
+
+	while (true)
 	{
-		int FindVal = SumValue - Elements[i];
-		int EndIdx = NumOfElements - i;
-		int StartIdx = i + 1;
-
-		while (true)
+		if (StartIter == EndIter)
 		{
-			if (1 >= (EndIdx - StartIdx))
-			{
-				break;
-			}
+			break;
+		}
 
-			int HalfIdx = static_cast<int>((EndIdx + StartIdx) / 2);
-			int Value = Elements[HalfIdx];
+		int CalValue = (*StartIter) + (*EndIter);
 
-			if (FindVal == Value)
-			{
-				++AvailableCalNum;
-				break;
-			}
-			else
-			{
-				if (FindVal < Value)
-				{
-					EndIdx = HalfIdx;
-				}
-				else if (FindVal > Value)
-				{
-					StartIdx = HalfIdx;
-				}
-			}
+		if (SumValue < CalValue)
+		{
+			--EndIter;
+		}
+		else if (SumValue > CalValue)
+		{
+			++StartIter;
+		}
+		else
+		{
+			++AvailableCalNum;
+			--EndIter;
 		}
 	}
 
