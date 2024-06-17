@@ -13,3 +13,4 @@
 #include <thread>
 #include <atomic>
 #include <mutex>
+#include <algorithm>
