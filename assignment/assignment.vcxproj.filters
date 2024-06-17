@@ -264,6 +264,12 @@
     <ClInclude Include="SMVec.h">
       <Filter>BaekJoon\Vector\SM</Filter>
     </ClInclude>
+    <ClInclude Include="JYRamyeon.h">
+      <Filter>Ramyeon\JY</Filter>
+    </ClInclude>
+    <ClInclude Include="JYBJVector.h">
+      <Filter>BaekJoon\Vector\JY</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -325,6 +331,12 @@
     </ClCompile>
     <ClCompile Include="THBJVector.cpp">
       <Filter>BaekJoon\Vector\TH</Filter>
+    </ClCompile>
+    <ClCompile Include="JYRamyeon.cpp">
+      <Filter>Ramyeon\JY</Filter>
+    </ClCompile>
+    <ClCompile Include="JYBJVector.cpp">
+      <Filter>BaekJoon\Vector\JY</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
