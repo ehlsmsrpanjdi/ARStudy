@@ -188,3 +188,68 @@ void YDBJVector::BJ13300()
 	}
 	std::cout << result;
 }
+
+void YDBJVector::BJ11328()
+{
+	int N;
+	std::string str1, str2;
+	std::cin >> N;
+	while (N)
+	{
+		std::map<char, int> str1map;
+		std::map<char, int> str2map;
+		std::cin >> str1 >> str2;
+
+		for (int i = 0; i < str1.size(); i++)
+		{
+			++str1map[str1[i]];
+		}
+		for (int i = 0; i < str2.size(); i++)
+		{
+			++str2map[str2[i]];
+		}
+
+		bool IsPossible = true;
+		for (int i = 0; i < str2.size(); i++)
+		{
+			if (str1map[str2[i]] != str2map[str2[i]])
+			{
+				IsPossible = false;
+			}
+		}
+		if (IsPossible)
+		{
+			std::cout << "Possible\n";
+		}
+		else
+		{
+			std::cout << "Impossible\n";
+		}
+		--N;
+	}
+}
+
+void YDBJVector::BJ1919()
+{
+	int arr1[26] = { 0, };
+	int arr2[26] = { 0, };
+	int result = 0;
+	std::string str1, str2;
+	std::cin >> str1 >> str2;
+
+	for (int i = 0; i < str1.size(); ++i)
+	{
+		++arr1[str1[i] - 'a'];
+	}
+	for (int i = 0; i < str2.size(); ++i)
+	{
+		++arr2[str2[i] - 'a'];
+	}
+
+	for (int i = 0; i < 26; ++i)
+	{
+		result += abs(arr1[i] - arr2[i]);
+	}
+
+	std::cout << result;
+}
