@@ -33,3 +33,5 @@
 #include <assignment/KYBJVector.h>
 #include <assignment/YDBJVector.h>
 #include <assignment/THBJVector.h>
+
+#include <assignment/SJBJSearch.h>

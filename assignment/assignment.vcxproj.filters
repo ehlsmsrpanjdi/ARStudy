@@ -151,6 +151,12 @@
     <Filter Include="BaekJoon\Vector\SW">
       <UniqueIdentifier>{fb169344-0f5c-4df0-b17b-2bd71469f91c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaekJoon\Search">
+      <UniqueIdentifier>{f1238394-90ec-4174-b1c2-2844601af490}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Search\SJ">
+      <UniqueIdentifier>{0bb73735-d599-4782-b8f9-271c043db3d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -270,6 +276,9 @@
     <ClInclude Include="JYBJVector.h">
       <Filter>BaekJoon\Vector\JY</Filter>
     </ClInclude>
+    <ClInclude Include="SJBJSearch.h">
+      <Filter>BaekJoon\Search\SJ</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -337,6 +346,9 @@
     </ClCompile>
     <ClCompile Include="JYBJVector.cpp">
       <Filter>BaekJoon\Vector\JY</Filter>
+    </ClCompile>
+    <ClCompile Include="SJBJSearch.cpp">
+      <Filter>BaekJoon\Search\SJ</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
