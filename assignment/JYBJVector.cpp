@@ -114,6 +114,46 @@ int JYBJVector::BJ1475()
 
 int JYBJVector::BJ3273()
 {
+	int n, x, Num;
+	std::vector<int> Sequence;
+	int Res = 0;
+
+	std::cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		std::cin >> Num;
+		Sequence.push_back(Num);
+	}
+
+	std::sort(Sequence.begin(), Sequence.end());
+
+	std::cin >> x;
+
+	int i1 = 0;
+	int i2 = n - 1;
+
+	while (i1 < i2)
+	{
+		int Sum = Sequence[i1] + Sequence[i2];
+
+		if (Sum == x)
+		{
+			Res += 1;
+			i1 += 1;
+		}
+		else if (Sum < x)
+		{
+			i1 += 1;
+		}
+		else if (Sum > x)
+		{
+			i2 -= 1;
+		}
+	}
+
+	std::cout << Res;
+
 	return 0;
 }
 
