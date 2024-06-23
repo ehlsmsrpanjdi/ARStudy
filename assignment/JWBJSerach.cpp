@@ -11,120 +11,140 @@ JWBJSerach::~JWBJSerach()
 
 void JWBJSerach::BJ1926()
 {
-	// 실패
-	// 왜?? 출력은 이상 없는데 (여러 출력 가능)
-	int n;
-	int m;
 	std::cin >> n;
 	std::cin >> m;
 
-	int PCount = 0;
-	int MaxSize = 0;
-
-	std::vector<std::vector<int>> Picture;
-
-	for (int y = 0; y < n; y++)
+	Graph.resize(n);
+	Visited.resize(n);
+	for (int Y = 0; Y < n; Y++)
 	{
-		std::vector<int> Number;
-		for (int x = 0; x < m; x++)
+		Graph[Y].resize(m);
+		Visited[Y].resize(m, false);
+		for (int X = 0; X < m; X++)
 		{
-			int Num;
-			std::cin >> Num;
-			Number.push_back(Num);
+			std::cin >> Graph[Y][X];
 		}
-		Picture.push_back(Number);
 	}
 
-	CountPicture(Picture, PCount, MaxSize);
-
-	std::cout << PCount << std::endl;
-	std::cout << MaxSize << std::endl;
-}
-
-void JWBJSerach::CountPicture(std::vector<std::vector<int>> _Picture, int& _PCount, int& _MaxSize)
-{
-	int Y = _Picture.size();
-	int X = _Picture[0].size();
-
-	std::vector<std::vector<bool>> CheckVec;
-	CheckVec.resize(Y);
-	for (int i = 0; i < Y; i++)
-	{
-		CheckVec[i].resize(X, false);
-	}
-
-	std::vector<std::vector<int>> PartVec;
-	PartVec.resize(Y);
-	for (int i = 0; i < Y; i++)
-	{
-		PartVec[i].resize(X);
-	}
-
-	int Part = 1;
-	// 오른쪽, 아래 탐색
 	int Count = 0;
+	int Width = 0;
+	int MaxWidth = 0;
 
-	for (int y = 0; y < Y; y++)
+	for (int Y = 0; Y < n; Y++)
 	{
-		bool Check = false;
-		int TempX = 0;
-		while (TempX < X)
+		for (int X = 0; X < m; X++)
 		{
-			if (1 == _Picture[y][TempX] && false == CheckVec[y][TempX])
+			if (1 == Graph[Y][X] && false == Visited[Y][X])
 			{
 				Count++;
-				// 왼쪽 확인
-				int XIndex = TempX - 1;
-				if (0 <= XIndex && 1 == _Picture[y][XIndex])
+				Width = 0;
+				BFS1926(Y, X, Width);
+				if (Width > MaxWidth)
 				{
-					Part = PartVec[y][XIndex];
-					Count--;
+					MaxWidth = Width;
 				}
-
-				// 위쪽 확인
-				int YIndex = y - 1;
-				if (0 <= YIndex && 1 == _Picture[YIndex][TempX])
-				{
-					Part = PartVec[YIndex][TempX];
-					Check = true;
-				}
-
-				PartVec[y][TempX] = Part;
-				CheckVec[y][TempX] = true;
 			}
-			Part++;
-			TempX++;
-
-		}
-		if (true == Check)
-		{
-			Count--;
 		}
 	}
 
-	std::map<int, int> SizeMap;
-	int Temp = 0;
-	for (int y = 0; y < Y; y++)
+	std::cout << Count << std::endl;
+	std::cout << MaxWidth << std::endl;
+}
+
+void JWBJSerach::BJ2178()
+{
+	std::cin >> n;
+	std::cin >> m;
+
+	Graph.resize(n);
+	Visited.resize(n);
+
+	for (int Y = 0; Y < n; Y++)
 	{
-		for (int x = 0; x < X; x++)
+		std::string Line;
+		Graph[Y].resize(m);
+		Visited[Y].resize(m, false);
+		std::cin >> Line;
+		for (int X = 0; X < m; X++)
 		{
-			int Num = PartVec[y][x];
-			if (0 != Num)
+			int Number = Line[X] - '0';
+			Graph[Y][X] = Number;
+		}
+	}
+
+	BFS(0, 0);
+	return 0;
+}
+
+void JWBJSerach::BFS1926(int Y, int X, int& Width)
+{
+	Visited[Y][X] = true;
+	Que.push(std::make_pair(Y, X));
+	Width++;
+
+	while (true != Que.empty())
+	{
+		Y = Que.front().first;
+		X = Que.front().second;
+		Que.pop();
+
+		for (int i = 0; i < 4; i++)
+		{
+			int NextX = X + CheckX[i];
+			int NextY = Y + CheckY[i];
+
+			if (NextY < 0 || NextY >= n || NextX < 0 || NextX >= m)
 			{
-				SizeMap[Num]++;
+				continue;
+			}
+			if (1 == Graph[NextY][NextX] && false == Visited[NextY][NextX])
+			{
+				Visited[NextY][NextX] = true;
+				Que.push(std::make_pair(NextY, NextX));
+				Width++;
+			}
+		}
+	}
+}
+
+void JWBJSerach::BFS2178(int Y, int X)
+{
+	std::vector<std::vector<int>> Dist;
+	Dist.resize(n);
+	for (int Y = 0; Y < n; Y++)
+	{
+		Dist[Y].resize(m, 0);
+	}
+
+	// 초기 세팅
+	Visited[Y][X] = true;
+	Que.push(std::make_pair(Y, X));
+	Dist[Y][X]++;
+
+	// BFS 탐색 시작
+	while (true != Que.empty())
+	{
+		Y = Que.front().first;
+		X = Que.front().second;
+		Que.pop();
+
+		for (int i = 0; i < 4; i++)
+		{
+			int NextX = X + CheckX[i];
+			int NextY = Y + CheckY[i];
+
+			if (NextY < 0 || NextY >= n || NextX < 0 || NextX >= m)
+			{
+				continue;
+			}
+			if (1 == Graph[NextY][NextX] && false == Visited[NextY][NextX])
+			{
+				Visited[NextY][NextX] = true;
+				Que.push(std::make_pair(NextY, NextX));
+				Dist[NextY][NextX] = Dist[Y][X] + 1;
 			}
 		}
 	}
 
-	int MaxValue = 0;
-	for (int i = 0; i < SizeMap.size(); i++)
-	{
-		if (MaxValue < SizeMap[i])
-		{
-			MaxValue = SizeMap[i];
-		}
-	}
-
-	_MaxSize = MaxValue;
-	_PCount = Count;
+	std::cout << Dist[n - 1][m - 1] << std::endl;
 }

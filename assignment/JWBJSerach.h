@@ -15,8 +15,15 @@ public:
 	void BJ2178();
 
 protected:
+	void BFS1926(int Y, int X, int& Width);
+	void BFS2178(int Y, int X);
 
 private:
-	void CountPicture(std::vector<std::vector<int>> _Picture, int& _PCount, int& _MaxSize);
+	std::queue<std::pair<int, int>> Que;
+	std::vector<std::vector<int>> Graph;
+	std::vector<std::vector<bool>> Visited;
+	int CheckX[4] = { 1, 0, -1, 0 };
+	int CheckY[4] = { 0, 1, 0, -1 };
+	int n, m;
 };
 
