@@ -157,6 +157,9 @@
     <Filter Include="BaekJoon\Search\SJ">
       <UniqueIdentifier>{0bb73735-d599-4782-b8f9-271c043db3d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaekJoon\Search\JW">
+      <UniqueIdentifier>{b3ee2ea9-1f11-44e3-99b6-5ae2fa045710}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -279,6 +282,9 @@
     <ClInclude Include="SJBJSearch.h">
       <Filter>BaekJoon\Search\SJ</Filter>
     </ClInclude>
+    <ClInclude Include="JWBJSerach.h">
+      <Filter>BaekJoon\Search\JW</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -349,6 +355,9 @@
     </ClCompile>
     <ClCompile Include="SJBJSearch.cpp">
       <Filter>BaekJoon\Search\SJ</Filter>
+    </ClCompile>
+    <ClCompile Include="JWBJSerach.cpp">
+      <Filter>BaekJoon\Search\JW</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
