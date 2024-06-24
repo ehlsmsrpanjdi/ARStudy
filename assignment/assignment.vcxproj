@@ -177,6 +177,10 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="JYRamyeon.h" />
+    <ClInclude Include="KYBJSearch.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="KYBJVector.h">
       <SubType>
       </SubType>
@@ -317,6 +321,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="JYRamyeon.cpp" />
+    <ClCompile Include="KYBJSearch.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="KYBJVector.cpp">
       <SubType>
       </SubType>

@@ -163,6 +163,9 @@
     <Filter Include="BaekJoon\Search\YD">
       <UniqueIdentifier>{7d55d644-c753-4ffb-b5aa-36484993d962}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaekJoon\Search\KY">
+      <UniqueIdentifier>{28d8ab19-89b8-49b6-8ac1-6717b6956f44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -291,6 +294,9 @@
     <ClInclude Include="YDBJSearch.h">
       <Filter>BaekJoon\Search\YD</Filter>
     </ClInclude>
+    <ClInclude Include="KYBJSearch.h">
+      <Filter>BaekJoon\Search\KY</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -367,6 +373,9 @@
     </ClCompile>
     <ClCompile Include="YDBJSearch.cpp">
       <Filter>BaekJoon\Search\YD</Filter>
+    </ClCompile>
+    <ClCompile Include="KYBJSearch.cpp">
+      <Filter>BaekJoon\Search\KY</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
