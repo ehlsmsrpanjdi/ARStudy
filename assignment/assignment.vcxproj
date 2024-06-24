@@ -204,6 +204,10 @@
     <ClInclude Include="SMCal.h" />
     <ClInclude Include="SMRM.h" />
     <ClInclude Include="SMVec.h" />
+    <ClInclude Include="SWBJSearch.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="SWBJVector.h">
       <SubType>
       </SubType>
@@ -346,6 +350,10 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="SMCal.cpp" />
+    <ClCompile Include="SWBJSearch.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="SWBJVector.cpp">
       <SubType>
       </SubType>
