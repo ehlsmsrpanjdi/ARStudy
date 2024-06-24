@@ -203,6 +203,7 @@
     </ClInclude>
     <ClInclude Include="SMCal.h" />
     <ClInclude Include="SMRM.h" />
+    <ClInclude Include="SMS.h" />
     <ClInclude Include="SMVec.h" />
     <ClInclude Include="SWBJSearch.h">
       <SubType>
