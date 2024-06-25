@@ -163,6 +163,15 @@
     <Filter Include="BaekJoon\Search\YD">
       <UniqueIdentifier>{7d55d644-c753-4ffb-b5aa-36484993d962}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaekJoon\Search\KY">
+      <UniqueIdentifier>{28d8ab19-89b8-49b6-8ac1-6717b6956f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Search\SW">
+      <UniqueIdentifier>{512ba1d3-4b7e-4158-b9f3-808142fbcc27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaekJoon\Search\SM">
+      <UniqueIdentifier>{a91eafe5-6a01-45cf-8550-d2c9ded99e27}</UniqueIdentifier>
+    </Filter>
     <Filter Include="BaekJoon\Search\JY">
       <UniqueIdentifier>{dd891efb-ef24-4463-9607-33adbbf090f8}</UniqueIdentifier>
     </Filter>
@@ -294,6 +303,15 @@
     <ClInclude Include="YDBJSearch.h">
       <Filter>BaekJoon\Search\YD</Filter>
     </ClInclude>
+    <ClInclude Include="KYBJSearch.h">
+      <Filter>BaekJoon\Search\KY</Filter>
+    </ClInclude>
+    <ClInclude Include="SWBJSearch.h">
+      <Filter>BaekJoon\Search\SW</Filter>
+    </ClInclude>
+    <ClInclude Include="SMS.h">
+      <Filter>BaekJoon\Search\SM</Filter>
+    </ClInclude>
     <ClInclude Include="JYBJSearch.h">
       <Filter>BaekJoon\Search\JY</Filter>
     </ClInclude>
@@ -373,6 +391,12 @@
     </ClCompile>
     <ClCompile Include="YDBJSearch.cpp">
       <Filter>BaekJoon\Search\YD</Filter>
+    </ClCompile>
+    <ClCompile Include="KYBJSearch.cpp">
+      <Filter>BaekJoon\Search\KY</Filter>
+    </ClCompile>
+    <ClCompile Include="SWBJSearch.cpp">
+      <Filter>BaekJoon\Search\SW</Filter>
     </ClCompile>
     <ClCompile Include="JYBJSearch.cpp">
       <Filter>BaekJoon\Search\JY</Filter>

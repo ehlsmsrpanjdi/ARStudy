@@ -1,3 +1,4 @@
+#include "PreCompile.h"
 #include "YDBJSearch.h"
 #include <iostream>
 #include <queue>

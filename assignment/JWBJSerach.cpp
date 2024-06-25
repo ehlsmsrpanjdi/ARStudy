@@ -72,8 +72,8 @@ void JWBJSerach::BJ2178()
 		}
 	}
 
-	BFS(0, 0);
-	return 0;
+	BFS2178(0, 0);
+	//return 0;
 }
 
 void JWBJSerach::BFS1926(int Y, int X, int& Width)

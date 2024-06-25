@@ -9,6 +9,11 @@ int main()
 		//Obj.BJ1926();
 		//Obj.BJ2178();
 	}
+
+	{
+		KYBJSearch KYBJ;
+		//KYBJ.BJ1926();
+	}
 }
 
 /*
