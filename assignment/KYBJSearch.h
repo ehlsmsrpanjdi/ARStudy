@@ -8,15 +8,22 @@ public:
 	KYBJSearch();
 	~KYBJSearch();
 
-	// delete Function
-	KYBJSearch(const KYBJSearch& _Other) = delete;
-	KYBJSearch(KYBJSearch&& _Other) noexcept = delete;
-	KYBJSearch& operator=(const KYBJSearch& _Other) = delete;
-	KYBJSearch& operator=(KYBJSearch&& _Other) noexcept = delete;
+	void BFS1926(int _X, int _Y);
+	void BJ1926();
 
 protected:
 
 private:
+	int Row = -1;
+	int Col = -1;
+	std::vector<std::vector<int>> Datas = std::vector<std::vector<int>>();
+	std::vector<std::vector<bool>> DataCheck = std::vector<std::vector<bool>>();
+	std::queue<std::pair<int, int>> q = std::queue<std::pair<int, int>>();
 
+	std::vector<int> CheckDirX = { 1, 0, -1, 0 };
+	std::vector<int> CheckDirY = { 0, 1, 0, -1 };
+
+	int PicCount = 0;
+	int LocalArea = 0;
+	int MaxArea = 0;
 };
-

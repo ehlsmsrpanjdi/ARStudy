@@ -172,6 +172,9 @@
     <Filter Include="BaekJoon\Search\SM">
       <UniqueIdentifier>{a91eafe5-6a01-45cf-8550-d2c9ded99e27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BaekJoon\Search\JY">
+      <UniqueIdentifier>{dd891efb-ef24-4463-9607-33adbbf090f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="USMList.h">
@@ -309,6 +312,9 @@
     <ClInclude Include="SMS.h">
       <Filter>BaekJoon\Search\SM</Filter>
     </ClInclude>
+    <ClInclude Include="JYBJSearch.h">
+      <Filter>BaekJoon\Search\JY</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="USMList.cpp">
@@ -391,6 +397,9 @@
     </ClCompile>
     <ClCompile Include="SWBJSearch.cpp">
       <Filter>BaekJoon\Search\SW</Filter>
+    </ClCompile>
+    <ClCompile Include="JYBJSearch.cpp">
+      <Filter>BaekJoon\Search\JY</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
