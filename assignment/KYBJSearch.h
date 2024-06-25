@@ -8,11 +8,8 @@ public:
 	KYBJSearch();
 	~KYBJSearch();
 
-	// delete Function
-	KYBJSearch(const KYBJSearch& _Other) = delete;
-	KYBJSearch(KYBJSearch&& _Other) noexcept = delete;
-	KYBJSearch& operator=(const KYBJSearch& _Other) = delete;
-	KYBJSearch& operator=(KYBJSearch&& _Other) noexcept = delete;
+	void BFS1926();
+	void BJ1926();
 
 protected:
 
