@@ -18,9 +18,10 @@ private:
 	int Col = -1;
 	std::vector<std::vector<int>> Datas = std::vector<std::vector<int>>();
 	std::vector<std::vector<bool>> DataCheck = std::vector<std::vector<bool>>();
-	std::queue<POINT> q = std::queue<POINT>();
+	std::queue<std::pair<int, int>> q = std::queue<std::pair<int, int>>();
 
-	std::vector<POINT> CheckDir = { {1, 0},{0,1},{-1,0},{0,-1} };
+	std::vector<int> CheckDirX = { 1, 0, -1, 0 };
+	std::vector<int> CheckDirY = { 0, 1, 0, -1 };
 
 	int PicCount = 0;
 	int LocalArea = 0;

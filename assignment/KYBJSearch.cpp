@@ -13,6 +13,7 @@ KYBJSearch::~KYBJSearch()
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <utility>
 
 void KYBJSearch::BFS1926(int _X, int _Y)
 {
@@ -20,10 +21,10 @@ void KYBJSearch::BFS1926(int _X, int _Y)
 	++LocalArea;
 	q.pop();
 
-	for (size_t i = 0; i < CheckDir.size(); i++)
+	for (size_t i = 0; i < CheckDirX.size(); i++)
 	{
-		int Y = _Y + CheckDir[i].y;
-		int X = _X + CheckDir[i].x;
+		int Y = _Y + CheckDirY[i];
+		int X = _X + CheckDirX[i];
 
 		if (Y < 0 || X < 0 || Y >= Row || X >= Col)
 		{
@@ -33,15 +34,15 @@ void KYBJSearch::BFS1926(int _X, int _Y)
 		if (1 == Datas[Y][X] && false == DataCheck[Y][X])
 		{
 			DataCheck[Y][X] = true;
-			q.push({ X , Y });
+			q.push(std::pair(X , Y));
 		}
 	}
 
 	while (!q.empty())
 	{
-		POINT Pos = q.front();
+		std::pair<int,int> Pos = q.front();
 
-		BFS1926(Pos.x, Pos.y);
+		BFS1926(Pos.first, Pos.second);
 	}
 }
 
@@ -83,7 +84,7 @@ void KYBJSearch::BJ1926()
 			if (1 == Datas[i][j])
 			{
 				++PicCount;
-				q.push({ i , j });
+				q.push(std::pair(i, j));
 				BFS1926(j, i);
 
 				if (LocalArea > MaxArea)
