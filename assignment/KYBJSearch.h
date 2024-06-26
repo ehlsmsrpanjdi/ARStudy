@@ -12,6 +12,8 @@ public:
 	void BJ1926();
 	void BJ2178();
 	void BFS2178(int _Y, int _X);
+	void Softeer1();
+	void ST1BPS(std::vector<std::pair<int, int>> _FriendPos);
 
 protected:
 

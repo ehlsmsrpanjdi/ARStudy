@@ -185,3 +185,114 @@ void KYBJSearch::BJ2178()
 
 	std::cout << Dists[InputY - 1][InputX - 1];
 }
+
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <queue>
+#include <set>
+
+int MapN = -1;
+int FriendNum = -1;
+int Opportunity = 3;
+int MaxFruitsCount = 0;
+std::vector<std::vector<int>> Map = std::vector<std::vector<int>>();
+std::vector<std::vector<bool>> Visited = std::vector<std::vector<bool>>();
+std::vector<std::pair<int, int>> FriendPos = std::vector<std::pair<int, int>>();
+
+std::vector<int> MoveX = { 1,0,-1,0 };
+std::vector<int> MoveY = { 0,1,0,-1 };
+
+std::vector<std::queue<std::pair<int, int>>> Queues = std::vector<std::queue<std::pair<int, int>>>();
+
+
+void KYBJSearch::ST1BPS(std::vector<std::pair<int, int>> _FriendPos)
+{
+	std::pair<int, int> NextPos = std::pair<int, int>();
+	int MaxFruitsNum = 0;
+		
+	for (int i = 0; i < FriendNum; ++i)
+	{
+		Queues[i].pop();
+		Visited[_FriendPos[i].first][_FriendPos[i].second] = true;
+
+		int X = -1;
+		int Y = -1;
+
+		for (size_t j = 0; j < MoveX.size(); j++)
+		{
+			X = _FriendPos[i].second + MoveX[j];
+			Y = _FriendPos[i].first + MoveY[j];
+
+			if (X < 0 || Y < 0 || X >= MapN || Y >= MapN)
+			{
+				continue;
+			}
+
+			if (MaxFruitsNum < Map[Y][X] && false == Visited[Y][X])
+			{
+				MaxFruitsNum = Map[Y][X];
+				NextPos = std::pair<int, int>(Y, X);
+			}
+		}
+
+		Visited[NextPos.first][NextPos.second] = true;
+		int FruitsNum = Map[NextPos.first][NextPos.second];
+		MaxFruitsCount += FruitsNum;
+
+		Queues[i].push(NextPos);
+		
+		FriendPos[i] = Queues[i].front();
+
+		NextPos = std::pair<int, int>(0, 0);
+		MaxFruitsNum = 0;
+	}
+
+	while (0 < --Opportunity)
+	{
+		ST1BPS(FriendPos);
+	}
+}
+
+
+void KYBJSearch::Softeer1()
+{
+	int InputVal = 0;
+	int InputPosX = 0;
+	int InputPosY = 0;
+
+	std::cin >> MapN;
+	std::cin >> FriendNum;
+
+	Map.resize(MapN);
+	Visited.resize(MapN);
+
+	for (int i = 0; i < MapN; ++i)
+	{
+		Map[i].resize(MapN);
+		Visited[i].resize(MapN);
+
+		for (int j = 0; j < MapN; j++)
+		{
+			std::cin >> InputVal;
+			Map[i][j] = InputVal;
+			Visited[i][j] = false;
+		}
+	}
+
+	for (int i = 0; i < FriendNum; ++i)
+	{
+		std::cin >> InputPosX;
+		std::cin >> InputPosY;
+		
+		FriendPos.push_back(std::pair<int, int>(InputPosX - 1, InputPosY - 1));
+		Queues.push_back(std::queue<std::pair<int, int>>());
+		Queues[i].push(std::pair<int, int>(InputPosX - 1, InputPosY - 1));
+
+		MaxFruitsCount += Map[InputPosX - 1][InputPosY - 1];
+	}
+
+	ST1BPS(FriendPos);
+
+	std::cout << MaxFruitsCount;
+}
