@@ -10,10 +10,10 @@ KYBJSearch::~KYBJSearch()
 {
 }
 
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <utility>
+//#include <iostream>
+//#include <vector>
+//#include <queue>
+//#include <utility>
 
 void KYBJSearch::BFS1926(int _X, int _Y)
 {
@@ -99,4 +99,85 @@ void KYBJSearch::BJ1926()
 
 	std::cout << PicCount << std::endl;
 	std::cout << MaxArea << std::endl;
+}
+
+
+
+
+#include <iostream>
+#include <vector>
+#include <string>
+#include <queue>
+#include <utility>
+
+int InputX = -1;
+int InputY = -1;
+std::string MapInput = "";
+std::vector<std::vector<int>> Miro = std::vector<std::vector<int>>();
+std::vector<std::vector<int>> Dists = std::vector<std::vector<int>>();
+std::vector<std::vector<bool>> CheckMat = std::vector<std::vector<bool>>();
+std::queue<std::pair<int, int>> q = std::queue<std::pair<int, int>>();
+std::pair<int, int> StartPos = std::pair<int, int>(0, 0);
+std::vector<int> CheckDirX = { 1, 0, -1, 0 };
+std::vector<int> CheckDirY = { 0, 1, 0, -1 };
+
+
+void KYBJSearch::BFS2178(int _Y, int _X)
+{
+	CheckMat[_Y][_X] = true;
+	q.pop();
+
+	for (size_t i = 0; i < CheckDirX.size(); i++)
+	{
+		int X = _X + CheckDirX[i];
+		int Y = _Y + CheckDirY[i];
+
+		if (X < 0 || Y < 0 || X >= InputX || Y >= InputY)
+		{
+			continue;
+		}
+
+		if (1 == Miro[Y][X] && false == CheckMat[Y][X])
+		{
+			q.push(std::pair<int, int>(X, Y));
+		}
+	}
+
+	while (!q.empty())
+	{
+		std::pair<int, int> NextPos = q.front();
+
+		BFS2178(NextPos.second, NextPos.first);
+	}
+}
+
+void KYBJSearch::BJ2178()
+{
+	std::cin >> InputY;
+	std::cin >> InputX;
+
+	Miro.resize(InputY);
+	CheckMat.resize(InputY);
+	Dists.resize(InputY);
+
+	for (int i = 0; i < InputY; i++)
+	{
+		std::cin >> MapInput;
+		
+		Miro[i].resize(InputX);
+		CheckMat[i].resize(InputX);
+		Dists[i].resize(InputX);
+
+		for (size_t j = 0; j < MapInput.size(); j++)
+		{
+			Miro[i][j] = MapInput[j] - '0';
+			CheckMat[i][j] = false;
+		}
+	}
+
+	CheckMat[StartPos.second][StartPos.first] = true;
+	q.push(std::pair<int, int>(StartPos.first, StartPos.second));
+	BFS2178(StartPos.second, StartPos.first);
+
+	int a = 0;
 }

@@ -13,6 +13,7 @@ int main()
 	{
 		KYBJSearch KYBJ;
 		//KYBJ.BJ1926();
+		//KYBJ.BJ2178();
 	}
 }
 

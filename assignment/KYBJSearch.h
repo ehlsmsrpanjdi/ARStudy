@@ -10,6 +10,8 @@ public:
 
 	void BFS1926(int _X, int _Y);
 	void BJ1926();
+	void BJ2178();
+	void BFS2178(int _Y, int _X);
 
 protected:
 
