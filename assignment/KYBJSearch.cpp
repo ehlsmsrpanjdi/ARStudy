@@ -139,6 +139,8 @@ void KYBJSearch::BFS2178(int _Y, int _X)
 
 		if (1 == Miro[Y][X] && false == CheckMat[Y][X])
 		{
+			Dists[Y][X] = Dists[_Y][_X] + 1;
+			CheckMat[Y][X] = true;
 			q.push(std::pair<int, int>(X, Y));
 		}
 	}
@@ -172,12 +174,14 @@ void KYBJSearch::BJ2178()
 		{
 			Miro[i][j] = MapInput[j] - '0';
 			CheckMat[i][j] = false;
+			Dists[i][j] = 0;
 		}
 	}
 
+	++Dists[StartPos.second][StartPos.first];
 	CheckMat[StartPos.second][StartPos.first] = true;
 	q.push(std::pair<int, int>(StartPos.first, StartPos.second));
 	BFS2178(StartPos.second, StartPos.first);
 
-	int a = 0;
+	std::cout << Dists[InputY - 1][InputX - 1];
 }
